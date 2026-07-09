@@ -52,3 +52,13 @@ Create a premium, modern, fully responsive website for AmbaShree Skills Academy 
 - Certificate scans (MCA, MBA, B.Tech, Microsoft, trainer certifications)
 - Real contact info (phone, WhatsApp, email, address)
 - Real social media URLs
+
+## Iteration 3 (2026-Q1) — content polish (design unchanged)
+- Hero: added "With the Grace of Laddu Gopal" corner (desktop top-right, mobile chip) with reserved photo slot for Laddu Gopal image; updated subtitle + marquee to reflect IT courses as upcoming
+- Courses: restructured to 4 grouped programme cards (Academic, Professional Spoken English with "NOT a 3-month course" highlight, Personality Development, Career & Job Readiness) + "Upcoming IT Courses" block with 6 COMING SOON chips (Microsoft Intune, SCCM, PowerShell, Python, AI Basics, Cloud Computing)
+- Faculty: Shantanu (MCA, 16+ yrs, 7 roles) with elegant TEXT-ONLY Microsoft certification badges (MD-102 Endpoint Admin, MCSE Core Infrastructure); Ankita (Academic Faculty, B.Tech); Anshuman Singh (Guest Faculty, MBA, HR Manager · Leading MNC, 17+ yrs)
+- Removed standalone Certifications section (Microsoft certs now sit inside founder card)
+- Featured Student renamed to "Students in Action"
+- Why Choose Us expanded to 8 reasons (added Individual Attention, Job Assistance, Interview Preparation)
+- Contact: added explicit Call Now / WhatsApp Us / Email CTA buttons row above the form
+- Nav: Home · About · Courses · Faculty · Students · Gallery · Contact

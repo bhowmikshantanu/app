@@ -17,9 +17,10 @@ const pills = [
     "Personality Dev",
     "Interview Prep",
     "Career Guidance",
-    "Microsoft Intune",
+    "Job Assistance",
     "Mathematics",
     "Science",
+    "IT Courses · Coming Soon",
 ];
 
 export default function Hero() {
@@ -115,10 +116,11 @@ export default function Hero() {
                         data-testid="hero-subtitle"
                         className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[color:var(--asa-text-muted)]"
                     >
-                        Academic Coaching (CBSE, ICSE &amp; State Board) · Spoken
-                        English · Personality Development · Career &amp; Job
-                        Readiness · Microsoft Intune Training. Small batches,
-                        certified faculty and a career-first approach.
+                        Academic Coaching (CBSE, ICSE &amp; State Board) ·
+                        Professional Spoken English · Personality Development ·
+                        Interview Preparation &amp; Career Guidance. Long-term,
+                        outcome-driven programmes — with an IT track (Intune,
+                        SCCM, PowerShell, Python, AI &amp; Cloud) coming soon.
                     </p>
 
                     <div className="mt-9 flex flex-wrap items-center gap-3">
