@@ -1,0 +1,33 @@
+{
+  "summary": "Verified that all 4 real faculty/blessing photos load and render correctly on the live homepage after being bundled locally under /faculty/*.jpg. Also fixed a leftover reference (Anshuman still pointed to the external CDN) that the main agent's fix had missed.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_4.json"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "data.js FACULTY[2] (Anshuman Singh) still referenced the external customer-assets CDN URL even though anshuman.jpg was bundled locally. Fixed by testing agent (changed to /faculty/anshuman.jpg). Please double-check no other stale CDN references remain (e.g., certifications section still uses Unsplash placeholderPhoto URLs — expected, but confirm).",
+    "Hero uses <img src={GALLERY[0].url}> for the background — this still hits Unsplash. If the reported 'pics are not coming up' issue is due to external CDN blocking in the client's network, consider bundling the classroom/gallery images locally as well.",
+    "Faculty.jsx alt text is 'portrait placeholder' for real photos — consider using the person's name for accessibility (e.g., alt={f.name})."
+  ],
+  "updated_files": ["/app/frontend/src/lib/data.js"],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "test_credentials": "N/A",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Image loading verified: Laddu Gopal (362x499), Shantanu (430x516), Ankita (748x652), Anshuman (432x432). All four /faculty/*.jpg endpoints return HTTP 200 from the public REACT_APP_BACKEND_URL. naturalWidth > 0 for all. Contact info (+91 90457 47008, Dineshpur, Uttarakhand) still present. Screenshots captured in .screenshots/hero.png and .screenshots/faculty.png.",
+  "test_evidence": {
+    "images_verified": [
+      {"testid": "laddu-gopal-corner", "src_ends_with": "/faculty/laddu-gopal.jpg", "naturalWidth": 362, "http_status": 200},
+      {"testid": "faculty-card-0", "src_ends_with": "/faculty/shantanu.jpg", "naturalWidth": 430, "http_status": 200},
+      {"testid": "faculty-card-1", "src_ends_with": "/faculty/ankita.jpg", "naturalWidth": 748, "http_status": 200},
+      {"testid": "faculty-card-2", "src_ends_with": "/faculty/anshuman.jpg", "naturalWidth": 432, "http_status": 200}
+    ],
+    "contact_info_verified": {"phone": "+91 90457 47008 found", "address": "Dineshpur & Uttarakhand found"}
+  },
+  "rca of the issue": "User complained 'pics are not coming up' likely due to (a) stale browser cache pointing at old external CDN URLs, and (b) the fix commit missed updating Anshuman's photo URL from the customer-assets CDN to the local bundled path. After changing FACULTY[2].photo to '/faculty/anshuman.jpg' (files were already present at /app/frontend/public/faculty/), all 4 images now load with HTTP 200 and non-zero naturalWidth in a fresh browser context."
+}

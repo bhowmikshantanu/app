@@ -210,8 +210,7 @@ export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
         role: "Founder & Director",
-        photo:
-            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/sh2eylj3_me.jpg",
+        photo: "/faculty/shantanu.jpg",
         qualification: "Master of Computer Applications (MCA)",
         experience: "16+ Years Corporate IT Experience",
         roles: [
@@ -239,8 +238,7 @@ export const FACULTY = [
     {
         name: "Ankita Chakrawarty",
         role: "Academic Faculty",
-        photo:
-            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/1ydrm6py_Ankita.jpg",
+        photo: "/faculty/ankita.jpg",
         qualification: "Bachelor of Technology (B.Tech)",
         experience: "Concept-first teaching across CBSE / ICSE / State Board",
         roles: ["Mathematics Faculty", "Science Faculty", "Academic Coaching"],
@@ -249,8 +247,7 @@ export const FACULTY = [
     {
         name: "Anshuman Singh",
         role: "Guest Faculty",
-        photo:
-            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/yrh4phb4_Anshuman.jpg",
+        photo: "/faculty/anshuman.jpg",
         qualification: "Master of Business Administration (MBA)",
         designation: "HR Manager · Leading MNC",
         experience: "17+ Years Corporate Experience",

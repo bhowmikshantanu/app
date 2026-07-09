@@ -67,7 +67,7 @@ export default function Hero() {
                     className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-gold)]/12 border border-[color:var(--asa-gold)]/40 overflow-hidden"
                 >
                     <img
-                        src="https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/1xqajp7h_Gopu.jpg"
+                        src="/faculty/laddu-gopal.jpg"
                         alt="Laddu Gopal"
                         className="h-full w-full object-cover"
                     />
