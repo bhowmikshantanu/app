@@ -12,7 +12,7 @@ function FacultyCard({ f, index }) {
             className="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--asa-surface)] hover:border-[color:var(--asa-gold)]/40 hover:-translate-y-1 transition-[transform,border-color] duration-300 flex flex-col"
         >
             <div
-                className={`relative aspect-[4/5] overflow-hidden ${
+                className={`relative aspect-[3/4] overflow-hidden ${
                     f.photoTransparent
                         ? "bg-gradient-to-br from-[color:var(--asa-secondary)] via-[color:var(--asa-accent)]/40 to-[color:var(--asa-bg)]"
                         : ""
@@ -37,17 +37,17 @@ function FacultyCard({ f, index }) {
                         Photo placeholder
                     </span>
                 )}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-[11px] uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
                         {f.role}
                     </p>
-                    <h3 className="font-heading mt-1 text-3xl text-white">
+                    <h3 className="font-heading mt-0.5 text-2xl text-white">
                         {f.name}
                     </h3>
                 </div>
             </div>
 
-            <div className="p-6 flex-1 flex flex-col gap-5">
+            <div className="p-5 flex-1 flex flex-col gap-4 text-[13.5px]">
                 <div>
                     <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)]">
                         Qualification
@@ -168,7 +168,7 @@ export default function Faculty() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
                     {FACULTY.map((f, i) => (
                         <FacultyCard key={f.name} f={f} index={i} />
                     ))}

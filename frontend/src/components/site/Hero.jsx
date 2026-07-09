@@ -59,12 +59,11 @@ export default function Hero() {
             {/* Laddu Gopal blessing corner (desktop only, top-right) */}
             <div
                 data-testid="laddu-gopal-corner"
-                className="hidden lg:flex absolute top-24 right-6 z-10 items-center gap-3 rounded-2xl glass px-4 py-2.5 border border-[color:var(--asa-gold)]/30"
+                className="hidden lg:flex absolute top-24 right-6 z-10 items-center gap-3 rounded-2xl glass px-4 py-3 border border-[color:var(--asa-gold)]/40 shadow-[0_10px_30px_-10px_rgba(212,175,55,0.35)]"
             >
                 <span
-                    aria-hidden
                     data-testid="laddu-gopal-photo-slot"
-                    className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-gold)]/12 border border-[color:var(--asa-gold)]/40 overflow-hidden"
+                    className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-secondary)] border-2 border-[color:var(--asa-gold)]/60 overflow-hidden shadow-lg"
                 >
                     <img
                         src="/faculty/laddu-gopal.jpg"
@@ -76,7 +75,7 @@ export default function Hero() {
                     <p className="text-[9px] uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)]">
                         Blessings
                     </p>
-                    <p className="font-heading italic text-base text-[color:var(--asa-gold)]">
+                    <p className="font-heading italic text-lg text-[color:var(--asa-gold)]">
                         With the Grace of Laddu Gopal
                     </p>
                 </div>
@@ -92,9 +91,13 @@ export default function Hero() {
                         </div>
                         <div
                             data-testid="laddu-gopal-blessing-inline"
-                            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/8 px-4 py-1.5 text-xs italic text-[color:var(--asa-gold)]"
+                            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/8 px-3 py-1.5 text-xs italic text-[color:var(--asa-gold)]"
                         >
-                            <Flower2 className="h-3.5 w-3.5" />
+                            <img
+                                src="/faculty/laddu-gopal.jpg"
+                                alt="Laddu Gopal"
+                                className="h-6 w-6 rounded-full object-cover border border-[color:var(--asa-gold)]/50"
+                            />
                             With the Grace of Laddu Gopal
                         </div>
                     </div>
