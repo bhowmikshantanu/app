@@ -1,4 +1,4 @@
-import { BadgeCheck, Camera } from "lucide-react";
+import { BadgeCheck, Camera, ShieldCheck } from "lucide-react";
 import { FACULTY } from "@/lib/data";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -45,10 +45,19 @@ function FacultyCard({ f, index }) {
                     <p className="mt-1 text-sm text-white">{f.qualification}</p>
                 </div>
 
+                {f.designation && (
+                    <div>
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)]">
+                            Designation
+                        </p>
+                        <p className="mt-1 text-sm text-white">{f.designation}</p>
+                    </div>
+                )}
+
                 {f.experience && (
                     <div>
                         <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)]">
-                            Experience / Specialisation
+                            Experience
                         </p>
                         <p className="mt-1 text-sm text-[color:var(--asa-text-muted)]">
                             {f.experience}
@@ -72,6 +81,34 @@ function FacultyCard({ f, index }) {
                         ))}
                     </ul>
                 </div>
+
+                {f.certifications && f.certifications.length > 0 && (
+                    <div
+                        data-testid={`faculty-certifications-${index}`}
+                        className="rounded-2xl border border-[color:var(--asa-gold)]/25 bg-[color:var(--asa-gold)]/5 p-4"
+                    >
+                        <div className="flex items-center gap-2 mb-3">
+                            <ShieldCheck className="h-4 w-4 text-[color:var(--asa-gold)]" />
+                            <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
+                                Professional Certifications
+                            </p>
+                        </div>
+                        <ul className="space-y-2">
+                            {f.certifications.map((c) => (
+                                <li
+                                    key={c}
+                                    data-testid={`faculty-cert-${index}-${c.slice(0, 20).toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+                                    className="text-sm text-white/90 leading-snug"
+                                >
+                                    <span className="font-semibold text-[color:var(--asa-gold)]">
+                                        ✦
+                                    </span>{" "}
+                                    {c}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
 
                 <div className="pt-4 mt-auto border-t border-white/5">
                     <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)] mb-3">

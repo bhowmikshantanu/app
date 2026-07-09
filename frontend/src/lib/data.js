@@ -23,7 +23,7 @@ export const NAV_LINKS = [
     { label: "About", href: "#about" },
     { label: "Courses", href: "#courses" },
     { label: "Faculty", href: "#faculty" },
-    { label: "Certifications", href: "#certifications" },
+    { label: "Students", href: "#featured-student" },
     { label: "Gallery", href: "#gallery" },
     { label: "Contact", href: "#contact" },
 ];
@@ -91,6 +91,77 @@ export const COURSES = [
     },
 ];
 
+// Grouped course programs — used by the new Courses layout.
+export const COURSE_GROUPS = [
+    {
+        id: "academic",
+        title: "Academic Coaching",
+        subtitle: "Classes 7–10",
+        icon: "GraduationCap",
+        tone: "gold",
+        boards: ["CBSE", "ICSE", "State Board"],
+        subjects: ["Mathematics", "Science"],
+        note: "Concept-first coaching aligned with NCERT & board patterns.",
+    },
+    {
+        id: "spoken",
+        title: "Professional Spoken English",
+        subtitle: "Not a 3-month course",
+        icon: "MessagesSquare",
+        tone: "gold",
+        highlight:
+            "This is NOT a 3-month spoken English course — it is a long-term, outcome-driven communication programme.",
+        items: [
+            "Real English Communication",
+            "Spoken English",
+            "Grammar in Conversation",
+            "Vocabulary Building",
+            "Public Speaking",
+            "Group Discussion",
+            "Interview English",
+            "Confidence Building",
+        ],
+    },
+    {
+        id: "personality",
+        title: "Personality Development",
+        subtitle: "Presence · Poise · Persuasion",
+        icon: "Sparkles",
+        tone: "gold",
+        items: [
+            "Communication Skills",
+            "Confidence Building",
+            "Body Language",
+            "Presentation Skills",
+            "Leadership Skills",
+        ],
+    },
+    {
+        id: "career",
+        title: "Career & Job Readiness",
+        subtitle: "From learner to hired professional",
+        icon: "Briefcase",
+        tone: "gold",
+        items: [
+            "Resume Building",
+            "Mock HR Interviews",
+            "Interview Preparation",
+            "Career Guidance",
+            "Job Assistance",
+        ],
+    },
+];
+
+// Upcoming IT courses — shown as elegant "Coming Soon" chips.
+export const UPCOMING_IT_COURSES = [
+    { title: "Microsoft Intune", icon: "ShieldCheck" },
+    { title: "SCCM", icon: "Server" },
+    { title: "PowerShell", icon: "Terminal" },
+    { title: "Python", icon: "Code2" },
+    { title: "AI Basics", icon: "Sparkles" },
+    { title: "Cloud Computing", icon: "Cloud" },
+];
+
 export const WHY_CHOOSE = [
     {
         title: "Experienced Faculty",
@@ -98,29 +169,39 @@ export const WHY_CHOOSE = [
         icon: "Award",
     },
     {
+        title: "Small Batch Size",
+        desc: "Intimate classrooms designed for deep learning, not headcount.",
+        icon: "Users",
+    },
+    {
+        title: "Individual Attention",
+        desc: "Personal mentoring — every student is seen, heard and guided.",
+        icon: "UserCheck",
+    },
+    {
         title: "Practical Learning",
         desc: "Hands-on assignments, live demos and real-world case studies.",
         icon: "Wrench",
     },
     {
-        title: "Modern Teaching",
-        desc: "Interactive digital classrooms, visual aids & smart assessments.",
-        icon: "Monitor",
+        title: "Career Guidance",
+        desc: "Personalised roadmaps for streams, careers and industry fit.",
+        icon: "Compass",
     },
     {
-        title: "Career Guidance",
-        desc: "Personalised mentoring for every stage of your learning journey.",
-        icon: "Compass",
+        title: "Job Assistance",
+        desc: "Support with resume building, referrals and placement leads.",
+        icon: "Handshake",
+    },
+    {
+        title: "Interview Preparation",
+        desc: "Mock HR & technical drills with structured, honest feedback.",
+        icon: "Briefcase",
     },
     {
         title: "Affordable Fees",
         desc: "Premium quality education, priced to be accessible for every family.",
         icon: "BadgeIndianRupee",
-    },
-    {
-        title: "Small Batch Size",
-        desc: "Focused attention and mentorship in intimate classroom settings.",
-        icon: "Users",
     },
 ];
 
@@ -134,12 +215,17 @@ export const FACULTY = [
         qualification: "Master of Computer Applications (MCA)",
         experience: "16+ Years Corporate IT Experience",
         roles: [
-            "Microsoft Intune Trainer",
+            "Mathematics Faculty",
+            "Science Faculty",
             "Spoken English Trainer",
             "Personality Development Trainer",
             "Interview Preparation Mentor",
             "Career Guidance Coach",
-            "Mathematics & Science Faculty (Classes 7–10)",
+            "Microsoft Intune Trainer",
+        ],
+        certifications: [
+            "Microsoft 365 Certified: Endpoint Administrator Associate",
+            "Microsoft Certified Solutions Expert: Core Infrastructure",
         ],
         badges: [
             "MCA",
@@ -152,35 +238,37 @@ export const FACULTY = [
     },
     {
         name: "Ankita",
-        role: "Faculty Member",
+        role: "Academic Faculty",
         photoPlaceholder: true,
         photo:
             "https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHRlYWNoZXJ8ZW58MHx8fHwxNzgzNTk0OTgxfDA&ixlib=rb-4.1.0&q=85",
-        qualification: "B.Tech",
-        experience: "Specialisation across CBSE / ICSE / State Board",
-        roles: ["Mathematics", "Science", "Academic Coaching"],
+        qualification: "Bachelor of Technology (B.Tech)",
+        experience: "Concept-first teaching across CBSE / ICSE / State Board",
+        roles: ["Mathematics Faculty", "Science Faculty", "Academic Coaching"],
         badges: ["B.Tech", "Mathematics", "Science", "Academic Coaching"],
     },
     {
-        name: "Anshuman",
-        role: "Faculty Member",
+        name: "Anshuman Singh",
+        role: "Guest Faculty",
         photoPlaceholder: true,
         photo:
             "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85",
-        qualification: "MBA",
-        experience: "Soft skills, corporate readiness & career mentoring",
+        qualification: "Master of Business Administration (MBA)",
+        designation: "HR Manager · Leading MNC",
+        experience: "17+ Years Corporate Experience",
         roles: [
-            "Spoken English",
-            "Personality Development",
-            "Interview Preparation",
-            "Career Guidance",
+            "Spoken English Trainer",
+            "Personality Development Trainer",
+            "Interview Preparation Mentor",
+            "Career Guidance Coach",
         ],
         badges: [
             "MBA",
+            "17+ Years Experience",
+            "HR Manager · MNC",
             "Spoken English",
             "Personality Development",
-            "Interview Prep",
-            "Career Guidance",
+            "Career Mentor",
         ],
     },
 ];
@@ -262,9 +350,9 @@ export const CERTIFICATIONS = [
 // Featured student — placeholder until founder uploads daughter's photo & story.
 export const FEATURED_STUDENT = {
     name: "Featured Student",
-    tagline: "Success Story · Coming Soon",
+    tagline: "Students in Action · Coming Soon",
     story:
-        "A dedicated learner from AmbaShree Skills Academy — soon to be featured with real photo, achievements and a personal message from the founder.",
+        "A dedicated learner from AmbaShree Skills Academy — soon to be featured with a real photo, achievements and a personal message from the founder. Watch this space for real success stories in action.",
     highlights: [
         "Consistent academic excellence",
         "Strong communication & confidence",

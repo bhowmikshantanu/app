@@ -43,7 +43,7 @@ export default function FeaturedStudent() {
                     {/* Content */}
                     <div className="lg:col-span-7 p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
                         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--asa-gold)]">
-                            ✦ Student Spotlight
+                            ✦ Students in Action
                         </p>
                         <h2 className="font-heading mt-4 text-4xl sm:text-5xl text-white leading-[1.05]">
                             Meet our{" "}

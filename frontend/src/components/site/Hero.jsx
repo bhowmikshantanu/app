@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles, Flower2 } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 import { GALLERY } from "@/lib/data";
 
@@ -55,12 +55,46 @@ export default function Hero() {
                 />
             </div>
 
+            {/* Laddu Gopal blessing corner (desktop only, top-right) */}
+            <div
+                data-testid="laddu-gopal-corner"
+                className="hidden lg:flex absolute top-24 right-6 z-10 items-center gap-3 rounded-2xl glass px-4 py-2.5 border border-[color:var(--asa-gold)]/30"
+            >
+                <span
+                    aria-hidden
+                    data-testid="laddu-gopal-photo-slot"
+                    className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-gold)]/12 border border-[color:var(--asa-gold)]/40 overflow-hidden"
+                >
+                    <Flower2 className="h-5 w-5 text-[color:var(--asa-gold)]" />
+                    <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[7px] uppercase tracking-[0.2em] text-[color:var(--asa-gold)] whitespace-nowrap">
+                        Photo slot
+                    </span>
+                </span>
+                <div className="leading-tight">
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)]">
+                        Blessings
+                    </p>
+                    <p className="font-heading italic text-base text-[color:var(--asa-gold)]">
+                        With the Grace of Laddu Gopal
+                    </p>
+                </div>
+            </div>
+
             <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 {/* Left copy */}
                 <div className="lg:col-span-7">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/5 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
-                        <Sparkles className="h-3.5 w-3.5" />
-                        Premium Institute
+                    <div className="flex flex-wrap items-center gap-3">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/5 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Premium Institute
+                        </div>
+                        <div
+                            data-testid="laddu-gopal-blessing-inline"
+                            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/8 px-4 py-1.5 text-xs italic text-[color:var(--asa-gold)]"
+                        >
+                            <Flower2 className="h-3.5 w-3.5" />
+                            With the Grace of Laddu Gopal
+                        </div>
                     </div>
 
                     <h1

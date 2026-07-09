@@ -75,6 +75,35 @@ export default function Contact() {
                         Share your details and our counsellor will walk you
                         through course options, batch timings and fees.
                     </p>
+
+                    <div className="mt-8 flex flex-wrap items-center gap-3">
+                        <a
+                            href={`tel:${CONTACT.phone}`}
+                            data-testid="contact-call-btn"
+                            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--asa-gold)] px-6 py-3 text-sm font-semibold text-[color:var(--asa-bg)] hover:bg-[color:var(--asa-gold-hover)] hover:-translate-y-0.5 transition-[background-color,transform]"
+                        >
+                            <Phone className="h-4 w-4" />
+                            Call Now
+                        </a>
+                        <a
+                            href={`https://wa.me/${CONTACT.whatsappRaw}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-testid="contact-whatsapp-btn"
+                            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 px-6 py-3 text-sm font-semibold text-emerald-300 hover:bg-emerald-400/10 transition-colors"
+                        >
+                            <MessageCircle className="h-4 w-4" />
+                            WhatsApp Us
+                        </a>
+                        <a
+                            href={`mailto:${CONTACT.email}`}
+                            data-testid="contact-email-btn"
+                            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/60 px-6 py-3 text-sm font-semibold text-[color:var(--asa-gold)] hover:bg-[color:var(--asa-gold)]/10 transition-colors"
+                        >
+                            <Mail className="h-4 w-4" />
+                            Email
+                        </a>
+                    </div>
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-8">

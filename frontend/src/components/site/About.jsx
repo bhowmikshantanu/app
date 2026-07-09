@@ -55,28 +55,30 @@ export default function About() {
                                 <span className="text-white font-medium">
                                     AmbaShree Skills Academy &amp; Institute
                                 </span>{" "}
-                                is a premium learning destination that blends
-                                strong academics with future-ready skills. We
-                                believe education must go beyond textbooks — it
-                                must shape confident communicators, sharp
-                                thinkers and career-ready professionals.
-                            </p>
-                            <p>
-                                Our programs span academic coaching for Classes
-                                7–10 (CBSE, ICSE &amp; State Board),{" "}
+                                is a premium learning destination built on a
+                                simple belief — education must go beyond
+                                textbooks. We combine{" "}
                                 <span className="text-white">
-                                    Spoken English, Personality Development,
-                                    Interview Preparation, Career Guidance
+                                    academic excellence
                                 </span>{" "}
-                                and enterprise-grade{" "}
-                                <span className="text-white">
-                                    Microsoft Intune Corporate Training
-                                </span>
-                                . Every session is delivered by qualified
-                                educators with real industry experience.
+                                for Classes 7–10 (CBSE, ICSE &amp; State Board)
+                                with future-ready skills the world genuinely
+                                rewards.
                             </p>
                             <p>
-                                Small batches, personal mentoring and a
+                                Our programmes span{" "}
+                                <span className="text-white">
+                                    Professional Spoken English, Personality
+                                    Development, Interview Preparation and
+                                    Career Guidance
+                                </span>{" "}
+                                — delivered by qualified educators with real
+                                industry experience. This is not a short 3-month
+                                English course; it is a long-term, mentor-led
+                                journey.
+                            </p>
+                            <p>
+                                Small batches, individual attention and a
                                 career-first mindset — that&apos;s the
                                 AmbaShree way.
                             </p>

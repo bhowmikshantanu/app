@@ -5,11 +5,24 @@ import {
     Compass,
     BadgeIndianRupee,
     Users,
+    UserCheck,
+    Handshake,
+    Briefcase,
 } from "lucide-react";
 import { WHY_CHOOSE } from "@/lib/data";
 import { useReveal } from "@/hooks/useReveal";
 
-const ICONS = { Award, Wrench, Monitor, Compass, BadgeIndianRupee, Users };
+const ICONS = {
+    Award,
+    Wrench,
+    Monitor,
+    Compass,
+    BadgeIndianRupee,
+    Users,
+    UserCheck,
+    Handshake,
+    Briefcase,
+};
 
 function BentoCard({ item, index, className = "" }) {
     const ref = useReveal();
@@ -44,14 +57,16 @@ function BentoCard({ item, index, className = "" }) {
 }
 
 export default function WhyChooseUs() {
-    // 6 cards laid out in bento (first two are wider)
+    // 8 cards — clean 4-column grid on desktop, symmetric.
     const layout = [
-        "md:col-span-2 lg:col-span-2",
         "md:col-span-1 lg:col-span-1",
         "md:col-span-1 lg:col-span-1",
         "md:col-span-1 lg:col-span-1",
         "md:col-span-1 lg:col-span-1",
-        "md:col-span-2 lg:col-span-2",
+        "md:col-span-1 lg:col-span-1",
+        "md:col-span-1 lg:col-span-1",
+        "md:col-span-1 lg:col-span-1",
+        "md:col-span-1 lg:col-span-1",
     ];
 
     return (
@@ -66,7 +81,7 @@ export default function WhyChooseUs() {
                         ✦ Why AmbaShree
                     </p>
                     <h2 className="font-heading mt-4 text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05]">
-                        Six reasons students &amp; parents{" "}
+                        Eight reasons students &amp; parents{" "}
                         <span className="italic text-[color:var(--asa-gold)]">
                             trust
                         </span>{" "}
@@ -74,7 +89,7 @@ export default function WhyChooseUs() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {WHY_CHOOSE.map((w, i) => (
                         <BentoCard
                             key={w.title}
