@@ -1,0 +1,25 @@
+{
+  "summary": "Frontend-only Playwright testing of AmbaShree Skills Academy site. Verified all critical flows and data-testids across desktop and mobile viewports. 31/31 checks passed. No bugs found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Contact form is client-side only (per user's explicit choice). Success toast shown but no data persisted - highlighted as MOCKED behavior in review request.",
+    "Placeholder phone/whatsapp (+91 00000 00000) and social links (#) are intentional placeholders per user's choice - main agent should replace when real info is provided.",
+    "Google Maps iframe uses a generic India query - update CONTACT.mapsQuery in /app/frontend/src/lib/data.js when actual address is available.",
+    "No backend endpoints were touched; default template's /api/status remains untested (not in scope)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100% (31/31)"},
+  "test_credentials": "N/A - no auth flows",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All 31 checks passed in one run: hero heading/subtitle text, nav scroll (Courses anchor), header Apply Now href=#contact, 10 course cards with all expected titles, 6 Why Choose Us cards with all expected titles, 3 Faculty cards (Shantanu Bhowmik, Ankita Chakrawarty, Anshuman) with credentials, 6 gallery items + Replace button interaction showing notice, testimonials next button + dot navigation, contact form empty validation (all 4 required errors), invalid-email validation, valid submission toast + form reset, contact map iframe, all 5 footer socials, floating WhatsApp button with wa.me href + target=_blank, hero WhatsApp CTA, Cormorant Garamond on h1, Outfit on body, no horizontal scroll at 390px mobile, mobile menu toggle opens drawer with nav links, hero CTAs visible on mobile. Test executed via Playwright at public URL from REACT_APP_BACKEND_URL.",
+  "rca of the issue": "No issues found."
+}
