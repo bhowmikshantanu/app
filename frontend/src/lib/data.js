@@ -1,13 +1,14 @@
 // Static content for AmbaShree Skills Academy website
 
 export const CONTACT = {
-    phone: "+91 00000 00000",
-    whatsapp: "+91 00000 00000",
-    whatsappRaw: "910000000000",
+    phone: "+91 90457 47008",
+    whatsapp: "+91 90457 47008",
+    whatsappRaw: "919045747008",
     email: "info@ambashreeacademy.com",
-    address: "123 Learning Avenue, City, State — 000000",
+    address:
+        "Hari Mandir Road, near Hari Mandir, Dineshpur - 263160, U.S. Nagar, Uttarakhand",
     mapsQuery:
-        "https://www.google.com/maps?q=India&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        "https://www.google.com/maps?q=Hari+Mandir+Road+Dineshpur+U.S.+Nagar+Uttarakhand+263160&hl=en&z=15&output=embed",
 };
 
 export const SOCIAL = {
@@ -209,9 +210,8 @@ export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
         role: "Founder & Director",
-        photoPlaceholder: true,
         photo:
-            "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85",
+            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/sh2eylj3_me.jpg",
         qualification: "Master of Computer Applications (MCA)",
         experience: "16+ Years Corporate IT Experience",
         roles: [
@@ -237,11 +237,10 @@ export const FACULTY = [
         ],
     },
     {
-        name: "Ankita",
+        name: "Ankita Chakrawarty",
         role: "Academic Faculty",
-        photoPlaceholder: true,
         photo:
-            "https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHRlYWNoZXJ8ZW58MHx8fHwxNzgzNTk0OTgxfDA&ixlib=rb-4.1.0&q=85",
+            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/1ydrm6py_Ankita.jpg",
         qualification: "Bachelor of Technology (B.Tech)",
         experience: "Concept-first teaching across CBSE / ICSE / State Board",
         roles: ["Mathematics Faculty", "Science Faculty", "Academic Coaching"],
@@ -250,9 +249,8 @@ export const FACULTY = [
     {
         name: "Anshuman Singh",
         role: "Guest Faculty",
-        photoPlaceholder: true,
         photo:
-            "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85",
+            "https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/yrh4phb4_Anshuman.jpg",
         qualification: "Master of Business Administration (MBA)",
         designation: "HR Manager · Leading MNC",
         experience: "17+ Years Corporate Experience",

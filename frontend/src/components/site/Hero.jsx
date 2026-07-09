@@ -64,12 +64,13 @@ export default function Hero() {
                 <span
                     aria-hidden
                     data-testid="laddu-gopal-photo-slot"
-                    className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-gold)]/12 border border-[color:var(--asa-gold)]/40 overflow-hidden"
+                    className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-gold)]/12 border border-[color:var(--asa-gold)]/40 overflow-hidden"
                 >
-                    <Flower2 className="h-5 w-5 text-[color:var(--asa-gold)]" />
-                    <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[7px] uppercase tracking-[0.2em] text-[color:var(--asa-gold)] whitespace-nowrap">
-                        Photo slot
-                    </span>
+                    <img
+                        src="https://customer-assets.emergentagent.com/job_ambashree-edu/artifacts/1xqajp7h_Gopu.jpg"
+                        alt="Laddu Gopal"
+                        className="h-full w-full object-cover"
+                    />
                 </span>
                 <div className="leading-tight">
                     <p className="text-[9px] uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)]">

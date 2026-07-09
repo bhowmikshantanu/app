@@ -163,11 +163,6 @@ export default function Faculty() {
                         <FacultyCard key={f.name} f={f} index={i} />
                     ))}
                 </div>
-
-                <p className="mt-8 text-xs text-[color:var(--asa-text-muted)]">
-                    Faculty photos above are professional placeholders — actual
-                    photos will replace them once uploaded.
-                </p>
             </div>
         </section>
     );
