@@ -11,11 +11,21 @@ function FacultyCard({ f, index }) {
             data-testid={`faculty-card-${index}`}
             className="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--asa-surface)] hover:border-[color:var(--asa-gold)]/40 hover:-translate-y-1 transition-[transform,border-color] duration-300 flex flex-col"
         >
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div
+                className={`relative aspect-[4/5] overflow-hidden ${
+                    f.photoTransparent
+                        ? "bg-gradient-to-br from-[color:var(--asa-secondary)] via-[color:var(--asa-accent)]/40 to-[color:var(--asa-bg)]"
+                        : ""
+                }`}
+            >
                 <img
                     src={f.photo}
-                    alt={`${f.name} portrait placeholder`}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt={f.name}
+                    className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                        f.photoTransparent
+                            ? "object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]"
+                            : "object-cover"
+                    }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--asa-bg)] via-[color:var(--asa-bg)]/40 to-transparent" />
                 {f.photoPlaceholder && (

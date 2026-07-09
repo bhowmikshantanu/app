@@ -210,7 +210,8 @@ export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
         role: "Founder & Director",
-        photo: "/faculty/shantanu.jpg",
+        photo: "/faculty/shantanu-nobg.png",
+        photoTransparent: true,
         qualification: "Master of Computer Applications (MCA)",
         experience: "16+ Years Corporate IT Experience",
         roles: [
