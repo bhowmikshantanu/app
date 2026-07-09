@@ -1,0 +1,94 @@
+{
+  "theme": "Dark Theme (Midnight Blue + Gold)",
+  "color_palette": {
+    "background_base": "#0A1128",
+    "surface_card": "#141B2D",
+    "surface_glass": "rgba(20, 27, 45, 0.7)",
+    "primary_gold": "#D4AF37",
+    "primary_gold_hover": "#B5952F",
+    "secondary_blue": "#1C2541",
+    "accent_blue": "#3A506B",
+    "text_primary": "#F8F9FA",
+    "text_secondary": "#A0AABF",
+    "border_color": "rgba(248, 249, 250, 0.1)"
+  },
+  "typography": {
+    "font_families": {
+      "headings": "'Cormorant Garamond', serif",
+      "body": "'Outfit', sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl+ tracking-tighter font-medium text-white",
+      "h2": "text-3xl md:text-4xl tracking-tight font-medium text-white",
+      "h3": "text-xl md:text-2xl font-medium text-primary_gold",
+      "body": "text-base leading-relaxed text-text_secondary",
+      "labels": "text-xs tracking-[0.2em] uppercase text-text_secondary"
+    },
+    "instructions": "Import Google Fonts 'Cormorant Garamond' (weights 400, 500, 600, 700) and 'Outfit' (weights 300, 400, 500, 600). Strictly use Cormorant Garamond for all headings and Outfit for body text. DO NOT use Inter for headings."
+  },
+  "surface_strategies": {
+    "header": "Crystal Glass variant: bg-[#141B2D]/70 backdrop-blur-xl border-b border-white/10 shadow-sm",
+    "cards": "Flat background with 1px subtle border (border-white/10). Hover state: slight lift (-translate-y-1), subtle shadow, and border color shifts to gold (border-[#D4AF37]/50)",
+    "buttons": "Pill-shaped or rounded-md. Primary: bg-[#D4AF37] text-[#0A1128] hover:bg-[#B5952F]. Secondary: border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10."
+  },
+  "layouts_and_spacing": {
+    "spacing_scale": "Use generous spacing. Section padding should be py-24 or py-32 on desktop, py-16 on mobile.",
+    "grids": "Use Mode A (The 'Tetris' Grid) for Marketing layout to add asymmetry where possible, especially in the Gallery and Why Choose Us sections. For Courses, use a dense grid (Mode B) grid-cols-1 md:grid-cols-2 lg:grid-cols-3 with gap-6."
+  },
+  "sections_instructions": {
+    "Header": "Sticky fixed header (z-50). Left: Text-based logo 'ASA' with 'A' and 'S' stylized in Gold and White using Cormorant Garamond. Middle: Desktop nav links (hover:text-primary_gold). Right: 'Apply Now' CTA button.",
+    "Hero": "Heading: 'Learn. Speak. Grow. Succeed.' Subtitle: 'Academic Coaching (CBSE, ICSE & State Board) | Spoken English | Personality Development | Career & Job Readiness | Microsoft Intune Training'. Background uses an image from the gallery with a heavy gradient overlay (bg-gradient-to-b from-[#0A1128]/80 to-[#0A1128]) to ensure high text contrast. Buttons: 'Apply Now' (Primary), 'Contact Us' (Secondary). Add a floating WhatsApp button fixed at bottom-right.",
+    "Courses": "Grid of 10 course cards: CBSE Classes 7-10, ICSE Classes 7-10, State Board Classes 7-10, Mathematics, Science, Spoken English, Personality Development, Interview Preparation, Career Guidance, Microsoft Intune Training. Cards should be minimal, featuring an icon and title.",
+    "Why_Choose_Us": "Bento grid or asymmetrical grid highlighting: Experienced Faculty, Practical Learning, Modern Teaching, Career Guidance, Affordable Fees, Small Batch Size. Use large Phosphor or Lucide icons.",
+    "Faculty": "Profile cards showing founder Shantanu Bhowmik (Founder), Ankita Chakrawarty (Academic Instructor - Science & Math), and Anshuman (Guest Faculty - HR Manager for Resume Building, Interview Prep, Corporate Readiness). Include images, names, and credentials.",
+    "Gallery": "A masonry or staggered grid showing classroom, students, training, and presentation photos.",
+    "Testimonials": "Modern cards using slider/carousel or grid showing student feedback. Include student portrait, name, and review text.",
+    "Contact": "Two-column layout. Left: Contact form with Shadcn components (Input, Textarea, Button). Right: Contact details (Phone, WhatsApp, Email) and a placeholder div for Google Maps (bg-surface_card with a map icon).",
+    "Footer": "Dark theme footer, py-20. Columns for Social Media, Quick Links, Courses, Contact Details. Subdued text colors."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1758270704296-a59b8f4e7dda?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+      "description": "Professor teaching students in a lecture hall"
+    },
+    "gallery": [
+      "https://images.unsplash.com/photo-1758270704262-ecc82b23dc37?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w8NjAzMjd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjB0cmFpbmVyJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjB0cmFpbmVyJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85"
+    ],
+    "faculty": [
+      {
+        "name": "Shantanu Bhowmik",
+        "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Ankita Chakrawarty",
+        "url": "https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHRlYWNoZXJ8ZW58MHx8fHwxNzgzNTk0OTgxfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Anshuman",
+        "url": "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85"
+      }
+    ],
+    "testimonials": [
+      "https://images.unsplash.com/photo-1568880893176-fb2bdab44e41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxoYXBweSUyMHN0dWRlbnQlMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODM1OTQ5ODF8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/5538020/pexels-photo-5538020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/36608621/pexels-photo-36608621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "animation_motion": {
+    "libraries": "framer-motion for staggers and scroll reveals, lenis for smooth scrolling.",
+    "instructions": "All interactive elements MUST have hover states (e.g., buttons, cards, links). Lists should stagger in on scroll. Avoid generic 'transition: all', target specific properties like 'transform', 'opacity', 'background-color'."
+  },
+  "icons": "lucide-react. Use consistent stroke width and size. Color icons in primary gold for emphasis.",
+  "testing_attributes": "All interactive and key informational elements MUST include a 'data-testid' attribute (e.g., data-testid='apply-now-btn').",
+  "universal_guidelines_for_main_agent": [
+    "Do not use generic centered layouts or simplistic gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for sticky navs and specific overlays.",
+    "NEVER use AI assistant Emoji characters (🤖🧠💭💡🔮🎯) for icons.",
+    "DO NOT use transparent backgrounds for dropdowns or headers where text becomes unreadable over scrolling content.",
+    "Ensure contrast ratios meet APCA/WCAG standards, especially for text over images."
+  ]
+}
