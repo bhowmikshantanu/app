@@ -56,14 +56,14 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Laddu Gopal blessing corner — always visible in the upper-right */}
+            {/* Laddu Gopal blessing corner — desktop absolute top-right */}
             <div
                 data-testid="laddu-gopal-corner"
-                className="absolute top-24 right-3 sm:right-5 z-20 flex items-center gap-2 sm:gap-3 rounded-2xl glass px-3 sm:px-4 py-2.5 sm:py-3 border border-[color:var(--asa-gold)]/50 shadow-[0_10px_40px_-10px_rgba(212,175,55,0.55)]"
+                className="hidden lg:flex absolute top-24 right-5 z-20 items-center gap-3 rounded-2xl glass px-4 py-3 border border-[color:var(--asa-gold)]/50 shadow-[0_10px_40px_-10px_rgba(212,175,55,0.55)]"
             >
                 <span
                     data-testid="laddu-gopal-photo-slot"
-                    className="relative flex h-14 w-14 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-secondary)] border-2 border-[color:var(--asa-gold)]/70 overflow-hidden shadow-xl"
+                    className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-secondary)] border-2 border-[color:var(--asa-gold)]/70 overflow-hidden shadow-xl"
                 >
                     <img
                         src="/faculty/laddu-gopal.jpg"
@@ -71,11 +71,11 @@ export default function Hero() {
                         className="h-full w-full object-cover"
                     />
                 </span>
-                <div className="leading-tight max-w-[10rem] sm:max-w-none">
-                    <p className="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[color:var(--asa-text-muted)]">
+                <div className="leading-tight">
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)]">
                         Blessings
                     </p>
-                    <p className="font-heading italic text-sm sm:text-lg text-[color:var(--asa-gold)] leading-snug">
+                    <p className="font-heading italic text-lg text-[color:var(--asa-gold)] leading-snug">
                         With the Grace of{" "}
                         <span className="whitespace-nowrap">Laddu Gopal</span>
                     </p>
@@ -89,6 +89,17 @@ export default function Hero() {
                         <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/5 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
                             <Sparkles className="h-3.5 w-3.5" />
                             Premium Institute
+                        </div>
+                        <div
+                            data-testid="laddu-gopal-blessing-inline"
+                            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/40 bg-[color:var(--asa-gold)]/10 pl-1 pr-3.5 py-1 text-xs italic text-[color:var(--asa-gold)]"
+                        >
+                            <img
+                                src="/faculty/laddu-gopal.jpg"
+                                alt="Laddu Gopal"
+                                className="h-6 w-6 rounded-full object-cover border border-[color:var(--asa-gold)]/60"
+                            />
+                            With the Grace of Laddu Gopal
                         </div>
                     </div>
 

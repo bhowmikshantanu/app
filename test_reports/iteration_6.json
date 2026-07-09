@@ -1,0 +1,41 @@
+{
+  "summary": "Frontend-only iteration 6 verification. Confirmed responsive Laddu Gopal placement (no overlap with hero heading at 1440/1024/768/390) and custom-domain SEO metadata (canonical, og:url, og:image, JSON-LD EducationalOrganization+Dineshpur), plus /robots.txt and /sitemap.xml. Contact form submission, WhatsApp CTA, and all faculty photos still work. Only issue found & self-fixed: served index.html was stale because CRA does not hot-reload public/index.html; restarted the frontend service and the new SEO metadata is now correctly served.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verifications_passed": [
+    "Desktop 1440x900: laddu-gopal-corner display=flex, rect right=1420 (20px from viewport right, within 30px), corner.left(1076) > heading.right(795) => no overlap",
+    "Desktop 1024x900: corner display=flex, corner.left(660) > heading.right(565) => no overlap",
+    "Tablet 768x1024: corner display=none, blessing-inline display=flex with img /faculty/laddu-gopal.jpg (naturalWidth=362), inline.bottom(162) <= heading.top(186) => chip above heading, no overlap",
+    "Mobile 390x844: corner display=none, blessing-inline display=flex with img /faculty/laddu-gopal.jpg (naturalWidth=362), inline.bottom(188) <= heading.top(212) => no overlap",
+    "document.title == 'AmbaShree Skills Academy & Institute | Learn. Speak. Grow. Succeed.'",
+    "link[rel=canonical] href == 'https://ambashreeskills.in/'",
+    "meta[og:url] content == 'https://ambashreeskills.in/'",
+    "meta[og:image] content == 'https://ambashreeskills.in/faculty/laddu-gopal.jpg'",
+    "script[type=application/ld+json] contains 'EducationalOrganization' and 'Dineshpur'",
+    "/robots.txt returns HTTP 200 and contains 'Sitemap: https://ambashreeskills.in/sitemap.xml'",
+    "/sitemap.xml returns HTTP 200 and contains 'https://ambashreeskills.in/'",
+    "hero-whatsapp-btn href == 'https://wa.me/919045747008'",
+    "All 5 faculty imgs load with naturalWidth>0 (laddu-gopal x2, shantanu, ankita, anshuman)",
+    "Contact form submission: filled fields + submit -> success toast 'Thanks! Your enquiry has been received. Our counsellor will get in touch with you within 24 hours.'"
+  ],
+  "test_report_links": [],
+  "action_items": [
+    "IMPORTANT: Any future edits to /app/frontend/public/index.html require a `sudo supervisorctl restart frontend` because CRA does not hot-reload the HTML template. This iteration was self-remediated by restarting."
+  ],
+  "critical_code_review_comments": [
+    "Hero.jsx is well structured; unused import 'Flower2' from lucide-react on line 1 can be removed.",
+    "The inline blessing chip on mobile/tablet is well placed above the hero heading in DOM flow (measured chip.bottom < heading.top on both 390 and 768 viewports), so no z-index/absolute positioning risks remain.",
+    "index.html metadata and JSON-LD schema follow best practices for EducationalOrganization; consider adding og:image alt and twitter:image meta for richer link previews."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "index.html changes require frontend restart (CRA does not hot-reload public/index.html). All Laddu Gopal responsive placement checks and SEO metadata checks are green. Contact form submits and WhatsApp CTA point to +919045747008.",
+  "rca of the issue": "Initial in-browser DOM inspection reported canonical/og:url/og:image/JSON-LD as null. Root cause: CRA (react-scripts start) only reads public/index.html at server startup; hot-reload does not pick up template changes. curl of the raw HTML confirmed a stale version was being served. Mitigation applied: `sudo supervisorctl restart frontend`, after which the served HTML and DOM both contained the correct canonical, og:url, og:image, and JSON-LD EducationalOrganization schema with Dineshpur address."
+}
