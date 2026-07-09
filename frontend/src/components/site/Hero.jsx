@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Sparkles, Flower2 } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 import { GALLERY } from "@/lib/data";
 
