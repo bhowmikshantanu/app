@@ -36,7 +36,11 @@ export default function Testimonials() {
                         </h2>
                         <p className="mt-6 text-[color:var(--asa-text-muted)] max-w-md">
                             Real feedback from students and professionals who
-                            have grown with AmbaShree Skills Academy.
+                            have grown with AmbaShree Skills Academy.{" "}
+                            <span className="text-[color:var(--asa-gold)]">
+                                Placeholder reviews shown — real testimonials
+                                coming soon.
+                            </span>
                         </p>
 
                         <div className="mt-8 flex items-center gap-3">

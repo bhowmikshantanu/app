@@ -20,11 +20,11 @@ export const SOCIAL = {
 
 export const NAV_LINKS = [
     { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
     { label: "Courses", href: "#courses" },
-    { label: "Why Us", href: "#why" },
     { label: "Faculty", href: "#faculty" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Gallery", href: "#gallery" },
-    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
 ];
 
@@ -127,40 +127,61 @@ export const WHY_CHOOSE = [
 export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
-        role: "Founder & Lead Trainer",
+        role: "Founder & Director",
+        photoPlaceholder: true,
         photo:
             "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85",
-        highlights: [
-            "16+ years Corporate Experience",
-            "Microsoft 365 Certified: Endpoint Administrator Associate (MD-102)",
-            "Microsoft Certified Solutions Expert: Core Infrastructure",
+        qualification: "Master of Computer Applications (MCA)",
+        experience: "16+ Years Corporate IT Experience",
+        roles: [
+            "Microsoft Intune Trainer",
+            "Spoken English Trainer",
+            "Personality Development Trainer",
+            "Interview Preparation Mentor",
+            "Career Guidance Coach",
+            "Mathematics & Science Faculty (Classes 7–10)",
         ],
-        specialization:
-            "Spoken English · Personality Development · Career Guidance · Microsoft Intune",
+        badges: [
+            "MCA",
+            "16+ Years Experience",
+            "Microsoft Intune Expert",
+            "Spoken English Trainer",
+            "Personality Development Trainer",
+            "Career Mentor",
+        ],
     },
     {
-        name: "Ankita Chakrawarty",
-        role: "Academic Instructor",
+        name: "Ankita",
+        role: "Faculty Member",
+        photoPlaceholder: true,
         photo:
             "https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHRlYWNoZXJ8ZW58MHx8fHwxNzgzNTk0OTgxfDA&ixlib=rb-4.1.0&q=85",
-        highlights: [
-            "Specialist in Science & Mathematics",
-            "Concept-first, exam-focused teaching style",
-            "Personalised doubt-solving sessions",
-        ],
-        specialization: "Science · Mathematics · CBSE / ICSE / State Board",
+        qualification: "B.Tech",
+        experience: "Specialisation across CBSE / ICSE / State Board",
+        roles: ["Mathematics", "Science", "Academic Coaching"],
+        badges: ["B.Tech", "Mathematics", "Science", "Academic Coaching"],
     },
     {
         name: "Anshuman",
-        role: "Guest Faculty · HR Manager",
+        role: "Faculty Member",
+        photoPlaceholder: true,
         photo:
             "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXQlMjB0ZWFjaGVyfGVufDB8fHx8MTc4MzU5NDk5Nnww&ixlib=rb-4.1.0&q=85",
-        highlights: [
-            "Resume Building workshops",
-            "Live Interview Preparation drills",
-            "Corporate Readiness & Etiquette training",
+        qualification: "MBA",
+        experience: "Soft skills, corporate readiness & career mentoring",
+        roles: [
+            "Spoken English",
+            "Personality Development",
+            "Interview Preparation",
+            "Career Guidance",
         ],
-        specialization: "HR Interviews · Corporate Communication · Job Readiness",
+        badges: [
+            "MBA",
+            "Spoken English",
+            "Personality Development",
+            "Interview Prep",
+            "Career Guidance",
+        ],
     },
 ];
 
@@ -191,6 +212,68 @@ export const GALLERY = [
         caption: "Student Success",
     },
 ];
+
+// Certifications — placeholder data until real certificates are uploaded.
+export const CERTIFICATIONS = [
+    {
+        title: "Master of Computer Applications",
+        short: "MCA",
+        issuer: "University Degree · Shantanu Bhowmik",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=70",
+    },
+    {
+        title: "Microsoft 365 Certified",
+        short: "MD-102",
+        issuer: "Endpoint Administrator Associate · Microsoft",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=1200&q=70",
+    },
+    {
+        title: "Microsoft Certified Solutions Expert",
+        short: "MCSE",
+        issuer: "Core Infrastructure · Microsoft",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=70",
+    },
+    {
+        title: "Bachelor of Technology",
+        short: "B.Tech",
+        issuer: "Engineering Degree · Ankita",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=70",
+    },
+    {
+        title: "Master of Business Administration",
+        short: "MBA",
+        issuer: "Business & HR · Anshuman",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=70",
+    },
+    {
+        title: "Professional Trainer Certifications",
+        short: "Trainer",
+        issuer: "Spoken English · Personality Development",
+        placeholderPhoto:
+            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=70",
+    },
+];
+
+// Featured student — placeholder until founder uploads daughter's photo & story.
+export const FEATURED_STUDENT = {
+    name: "Featured Student",
+    tagline: "Success Story · Coming Soon",
+    story:
+        "A dedicated learner from AmbaShree Skills Academy — soon to be featured with real photo, achievements and a personal message from the founder.",
+    highlights: [
+        "Consistent academic excellence",
+        "Strong communication & confidence",
+        "Rising leader in the making",
+    ],
+    photoPlaceholder: true,
+    photo:
+        "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=70",
+};
 
 export const TESTIMONIALS = [
     {

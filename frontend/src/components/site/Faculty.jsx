@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { BadgeCheck, Camera } from "lucide-react";
 import { FACULTY } from "@/lib/data";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -9,15 +9,24 @@ function FacultyCard({ f, index }) {
             ref={ref}
             style={{ transitionDelay: `${index * 100}ms` }}
             data-testid={`faculty-card-${index}`}
-            className="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--asa-surface)] hover:border-[color:var(--asa-gold)]/40 hover:-translate-y-1 transition-[transform,border-color] duration-300"
+            className="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--asa-surface)] hover:border-[color:var(--asa-gold)]/40 hover:-translate-y-1 transition-[transform,border-color] duration-300 flex flex-col"
         >
             <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                     src={f.photo}
-                    alt={`${f.name} portrait`}
+                    alt={`${f.name} portrait placeholder`}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--asa-bg)] via-[color:var(--asa-bg)]/40 to-transparent" />
+                {f.photoPlaceholder && (
+                    <span
+                        data-testid={`faculty-photo-placeholder-${index}`}
+                        className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-[color:var(--asa-bg)]/80 backdrop-blur border border-[color:var(--asa-gold)]/40 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-[color:var(--asa-gold)]"
+                    >
+                        <Camera className="h-3 w-3" />
+                        Photo placeholder
+                    </span>
+                )}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-[11px] uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
                         {f.role}
@@ -27,23 +36,58 @@ function FacultyCard({ f, index }) {
                     </h3>
                 </div>
             </div>
-            <div className="p-6 space-y-3">
-                {f.highlights.map((h) => (
-                    <div
-                        key={h}
-                        className="flex items-start gap-3 text-sm text-white/85"
-                    >
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--asa-gold)]" />
-                        <span>{h}</span>
+
+            <div className="p-6 flex-1 flex flex-col gap-5">
+                <div>
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)]">
+                        Qualification
+                    </p>
+                    <p className="mt-1 text-sm text-white">{f.qualification}</p>
+                </div>
+
+                {f.experience && (
+                    <div>
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)]">
+                            Experience / Specialisation
+                        </p>
+                        <p className="mt-1 text-sm text-[color:var(--asa-text-muted)]">
+                            {f.experience}
+                        </p>
                     </div>
-                ))}
-                <div className="pt-4 mt-4 border-t border-white/5">
+                )}
+
+                <div>
                     <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)] mb-2">
-                        Specialisation
+                        Roles
                     </p>
-                    <p className="text-sm text-[color:var(--asa-text-muted)]">
-                        {f.specialization}
+                    <ul className="space-y-1.5">
+                        {f.roles.map((r) => (
+                            <li
+                                key={r}
+                                className="flex items-start gap-2 text-sm text-white/85"
+                            >
+                                <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--asa-gold)]" />
+                                <span>{r}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="pt-4 mt-auto border-t border-white/5">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--asa-text-muted)] mb-3">
+                        Professional Badges
                     </p>
+                    <div className="flex flex-wrap gap-2">
+                        {f.badges.map((b) => (
+                            <span
+                                key={b}
+                                data-testid={`faculty-badge-${index}-${b.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+                                className="inline-flex items-center rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/8 px-3 py-1 text-[11px] font-medium text-[color:var(--asa-gold)]"
+                            >
+                                {b}
+                            </span>
+                        ))}
+                    </div>
                 </div>
             </div>
         </article>
@@ -61,7 +105,7 @@ export default function Faculty() {
                 <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
                     <div className="lg:col-span-8">
                         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--asa-gold)]">
-                            ✦ Meet the Faculty
+                            ✦ Meet Our Faculty
                         </p>
                         <h2 className="font-heading mt-4 text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05]">
                             Certified mentors.{" "}
@@ -72,8 +116,8 @@ export default function Faculty() {
                         </h2>
                     </div>
                     <p className="lg:col-span-4 text-[color:var(--asa-text-muted)]">
-                        Every session is designed and delivered by qualified
-                        educators who have taught, mentored and worked at scale.
+                        A close-knit team of qualified educators who have taught,
+                        mentored and worked at scale — dedicated to your growth.
                     </p>
                 </div>
 
@@ -82,6 +126,11 @@ export default function Faculty() {
                         <FacultyCard key={f.name} f={f} index={i} />
                     ))}
                 </div>
+
+                <p className="mt-8 text-xs text-[color:var(--asa-text-muted)]">
+                    Faculty photos above are professional placeholders — actual
+                    photos will replace them once uploaded.
+                </p>
             </div>
         </section>
     );

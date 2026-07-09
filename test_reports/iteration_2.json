@@ -1,0 +1,26 @@
+{
+  "summary": "Frontend-only Playwright regression + new-section testing of AmbaShree Skills Academy site (iteration 2). Verified all newly added About / Certifications / Featured Student sections, updated Faculty cards (Shantanu MCA + 6 roles/6 badges; Ankita B.Tech; Anshuman MBA) and placeholder-labeled testimonials, plus re-verified prior flows on desktop and mobile viewports. 14/14 checkpoints passed.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Content & testids look clean; placeholder patterns (Photo placeholder, Reserved photo slot, Placeholder overlay on certs, 'Placeholder reviews shown — real testimonials coming soon.') are all correctly wired.",
+    "CONTACT.whatsappRaw is '910000000000' — wa.me link works (https://wa.me/910000000000) but this is a placeholder and must be replaced with the real number before launch (already flagged in iter 1).",
+    "Contact form is client-side only (MOCKED behavior) — no backend persistence; success toast is UI only.",
+    "Google Maps iframe still uses generic India mapsQuery — update once real address is provided.",
+    "Faculty photos & certification photos are Unsplash placeholders — will need swap when real assets uploaded."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100% (14/14 checkpoints)"},
+  "test_credentials": "N/A - no auth flows",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Iteration 2 verified: (1) home-page + about-section render with 'AmbaShree Skills Academy & Institute' text and 4 pillars (about-pillar-0..3: Quality Education, Practical Learning, Personal Mentoring, Corporate Readiness); (2) Header desktop nav has 7 links (nav-home/about/courses/faculty/certifications/gallery/contact) — clicking About/Certifications/Faculty scrolls to correct section; (3) faculty-card-0 shows Shantanu Bhowmik / Founder & Director / MCA / 16+ Years Corporate IT Experience / all 6 roles + all 6 badges (MCA, 16+ Years Experience, Microsoft Intune Expert, Spoken English Trainer, Personality Development Trainer, Career Mentor); (4) faculty-card-1 Ankita / B.Tech / Mathematics + Science + Academic Coaching; (5) faculty-card-2 Anshuman / MBA / Spoken English + Personality Development + Interview Preparation + Career Guidance; (6) all 3 faculty-photo-placeholder-{0,1,2} badges show 'Photo placeholder'; (7) certifications-section renders exactly 6 certification-card-* items each with 'Placeholder' overlay; (8) featured-student-section renders with featured-student-placeholder-badge (Reserved photo slot) and 3 highlights (Consistent academic excellence, Strong communication & confidence, Rising leader in the making); (9) testimonials copy includes 'Placeholder reviews shown — real testimonials coming soon.'; (10) contact form empty-submit shows all 4 red validation msgs (Please enter your name/email/phone, Tell us how we can help); (11) valid submit triggers toast 'Thanks! Your enquiry has been received. Our counsellor will get in touch with you within 24 hours.'; (12) floating WhatsApp link resolves to https://wa.me/910000000000 target=_blank; (13) mobile viewport 375px shows no horizontal overflow (scrollWidth 375 == clientWidth 375); (14) mobile-menu-toggle opens mobile-nav with all 7 mobile-nav-* links visible + Apply Now. No bugs found — safe to proceed.",
+  "rca of the issue": "No issues found."
+}
