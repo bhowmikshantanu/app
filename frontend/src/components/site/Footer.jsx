@@ -142,9 +142,7 @@ export default function Footer() {
                         © {new Date().getFullYear()} AmbaShree Skills Academy
                         &amp; Institute. All rights reserved.
                     </p>
-                    <p className="text-xs text-[color:var(--asa-text-muted)]">
-                        Crafted with care · Premium Blue &amp; Gold theme
-                    </p>
+                    
                 </div>
             </div>
         </footer>
