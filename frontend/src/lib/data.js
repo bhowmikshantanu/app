@@ -105,7 +105,7 @@ export const COURSE_GROUPS = [
         note: "Concept-first coaching aligned with NCERT & board patterns.",
     },
     {
-        id: "spoken",
+        id: "Spoken",
         title: "Professional Spoken English",
         subtitle: "Not a 3-month course",
         icon: "MessagesSquare",
