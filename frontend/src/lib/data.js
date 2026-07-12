@@ -276,7 +276,7 @@ export const GALLERY = [
         featured: true,
     },
     {
-        url: "https://images.unsplash.com/photo-1758270704262-ecc82b23dc37?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+        url: "/bitiya2.png",
         caption: "Interactive Classroom",
     },
     {
