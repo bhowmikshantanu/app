@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --asa-bg: #F8FAFC;
-  --asa-surface: #FFFFFF;
-  --asa-secondary: #FFF7ED;
+  --asa-bg: #07142E;
+  --asa-surface: #0D2347;
+  --asa-secondary: #102B57;
   --asa-accent: #F97316;
-  --asa-gold: #F59E0B;
+  --asa-gold: #F4B942;
   --asa-gold-hover: #EA580C;
-  --asa-text: #0F172A;
-  --asa-text-muted: #64748B;
-  --asa-border: rgba(15, 23, 42, 0.12);
+  --asa-text: #F8FAFC;
+  --asa-text-muted: #CBD5E1;
+  --asa-border: rgba(255, 255, 255, 0.14);
 }
 
 html {
