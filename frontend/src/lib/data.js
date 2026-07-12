@@ -4,7 +4,7 @@ export const CONTACT = {
     phone: "+91 90457 47008",
     whatsapp: "+91 90457 47008",
     whatsappRaw: "919045747008",
-    email: "info@ambashreeacademy.com",
+    email: "info@ambashreeskills.in",
     address:
         "Hari Mandir Road, near Hari Mandir, Dineshpur - 263160, U.S. Nagar, Uttarakhand",
     mapsQuery:
