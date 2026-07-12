@@ -209,7 +209,7 @@ export const WHY_CHOOSE = [
 export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
-        role: "Founder & Director",
+        role: "Founder & Lead Trainer",
         photo: "/faculty/shantanu-nobg.png",
         photoTransparent: true,
         qualification: "Master of Computer Applications (MCA)",
@@ -237,13 +237,13 @@ export const FACULTY = [
         ],
     },
     {
-        name: "Ankita Chakrawarty",
-        role: "Academic Faculty",
-        photo: "/faculty/ankita.jpg",
-        qualification: "Bachelor of Technology (B.Tech)",
-        experience: "Concept-first teaching across CBSE / ICSE / State Board",
-        roles: ["Mathematics Faculty", "Science Faculty", "Academic Coaching"],
-        badges: ["B.Tech", "Mathematics", "Science", "Academic Coaching"],
+             name: "Ankita Chakrawarty",
+             role: "Academic Faculty",
+             photo: "/faculty/ankita.jpg",
+             qualification: "Bachelor of Science (B.Sc)",
+             experience: "Uttarakhand Topper | Concept-first teaching across CBSE / ICSE / State Board",
+             roles: ["Mathematics Faculty", "Science Faculty", "Academic Coaching"],
+             badges: ["B.Sc", "Uttarakhand Topper", "Mathematics", "Science"],
     },
     {
         name: "Anshuman Singh",
