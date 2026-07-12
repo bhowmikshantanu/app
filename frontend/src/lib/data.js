@@ -271,7 +271,7 @@ export const FACULTY = [
 
 export const GALLERY = [
     {
-        url: "https://images.unsplash.com/photo-1758270704296-a59b8f4e7dda?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
+        url: "/file_00000000a07c7206ac0258d894e35160.png",
         caption: "Lecture Hall Session",
         featured: true,
     },
