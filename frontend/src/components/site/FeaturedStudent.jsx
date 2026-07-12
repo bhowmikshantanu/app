@@ -71,7 +71,7 @@ export default function FeaturedStudent() {
                         <div className="mt-10 flex flex-wrap items-center gap-3">
                             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/40 bg-[color:var(--asa-gold)]/10 px-4 py-2 text-xs text-[color:var(--asa-gold)]">
                                 <Sparkles className="h-3.5 w-3.5" />
-                                Photo &amp; story to be updated soon
+                                Learning • Growing • Succeeding    
                             </span>
                         </div>
                     </div>
