@@ -338,18 +338,17 @@ export const CERTIFICATIONS = [
 
 // Featured student — placeholder until founder uploads daughter's photo & story.
 export const FEATURED_STUDENT = {
-    name: "Featured Student",
-    tagline: "Students in Action · Coming Soon",
-    story:
-        "A dedicated learner from AmbaShree Skills Academy — soon to be featured with a real photo, achievements and a personal message from the founder. Watch this space for real success stories in action.",
-    highlights: [
-        "Consistent academic excellence",
-        "Strong communication & confidence",
-        "Rising leader in the making",
-    ],
-    photoPlaceholder: true,
-    photo:
-        "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=70",
+  name: "Young Learners",
+  tagline: "Students in Action",
+  story:
+    "Focused learning, personal guidance and strong academic foundations at AmbaShree Skills Academy.",
+  highlights: [
+    "Focused academic learning",
+    "Strong communication & confidence",
+    "Personal attention and guidance",
+  ],
+  photoPlaceholder: false,
+  photo: "/featured-student.png",
 };
 
 export const TESTIMONIALS = [
