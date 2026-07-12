@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-    --asa-bg: #0A1128;
-    --asa-surface: #141B2D;
-    --asa-secondary: #1C2541;
-    --asa-accent: #3A506B;
-    --asa-gold: #D4AF37;
-    --asa-gold-hover: #B5952F;
-    --asa-text: #F8F9FA;
-    --asa-text-muted: #A0AABF;
-    --asa-border: rgba(248, 249, 250, 0.10);
+  --asa-bg: #F8FAFC;
+  --asa-surface: #FFFFFF;
+  --asa-secondary: #FFF7ED;
+  --asa-accent: #F97316;
+  --asa-gold: #F59E0B;
+  --asa-gold-hover: #EA580C;
+  --asa-text: #0F172A;
+  --asa-text-muted: #64748B;
+  --asa-border: rgba(15, 23, 42, 0.12);
 }
 
 html {
