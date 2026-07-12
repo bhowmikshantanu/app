@@ -1,233 +1,277 @@
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
-import { CONTACT } from "@/lib/data";
-import { GALLERY } from "@/lib/data";
+import {
+  ArrowRight,
+  MessageCircle,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 
-const stats = [
-    { value: "16+", label: "Years Corporate Exp." },
-    { value: "10+", label: "Specialised Courses" },
-    { value: "1:1", label: "Personal Mentoring" },
-    { value: "100%", label: "Career Focused" },
+import { CONTACT, GALLERY } from "@/lib/data";
+
+const journey = [
+  "Classes 7–10",
+  "Spoken English",
+  "Personality Development",
+  "Interview Preparation",
+  "Career Guidance",
 ];
 
-const pills = [
-    "CBSE",
-    "ICSE",
-    "State Board",
-    "Spoken English",
-    "Personality Dev",
-    "Interview Prep",
-    "Career Guidance",
-    "Job Assistance",
-    "Mathematics",
-    "Science",
-    "IT Courses · Coming Soon",
+const highlights = [
+  "Personal Attention",
+  "Practical Learning",
+  "Career Focused",
 ];
 
 export default function Hero() {
-    return (
-        <section
-            id="hero"
-            data-testid="hero-section"
-            className="relative isolate overflow-hidden pt-28 sm:pt-32 lg:pt-36 pb-20 lg:pb-28"
-        >
-            {/* Backgrounds */}
-            <div className="absolute inset-0 -z-10">
-                <img
-                    src={GALLERY[0].url}
-                    alt=""
-                    className="h-full w-full object-cover object-center opacity-30"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--asa-bg)]/75 via-[color:var(--asa-bg)]/85 to-[color:var(--asa-bg)]" />
-                <div
-                    aria-hidden
-                    className="absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full blur-3xl"
-                    style={{
-                        background:
-                            "radial-gradient(circle at center, rgba(212,175,55,0.18), transparent 60%)",
-                    }}
-                />
-                <div
-                    aria-hidden
-                    className="absolute top-1/3 -left-32 h-[360px] w-[360px] rounded-full blur-3xl"
-                    style={{
-                        background:
-                            "radial-gradient(circle at center, rgba(58,80,107,0.35), transparent 60%)",
-                    }}
-                />
+  return (
+    <section
+      id="hero"
+      data-testid="hero-section"
+      className="relative isolate overflow-hidden bg-[#fffaf2] pt-28 sm:pt-32 lg:pt-36"
+    >
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 opacity-[0.55]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(16,43,87,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(16,43,87,0.045) 1px, transparent 1px)",
+            backgroundSize: "38px 38px",
+          }}
+        />
+
+        <div className="absolute -left-24 top-28 h-[360px] w-[360px] rounded-full bg-orange-200/40 blur-[100px]" />
+
+        <div className="absolute -right-28 top-12 h-[430px] w-[430px] rounded-full bg-sky-200/50 blur-[110px]" />
+
+        <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-amber-100/60 blur-[100px]" />
+      </div>
+
+      {/* Laddu Gopal Blessing */}
+      <div
+        data-testid="laddu-gopal-corner"
+        className="absolute right-4 top-24 z-30 hidden items-center gap-3 rounded-2xl border border-amber-300/50 bg-white/90 px-3 py-3 shadow-xl backdrop-blur-md lg:flex xl:right-8"
+      >
+        <div className="h-16 w-16 overflow-hidden rounded-xl border-2 border-amber-300 bg-amber-50 p-1 shadow-inner">
+          <img
+            src="/faculty/laddu-gopal.jpg"
+            alt="Laddu Gopal"
+            className="h-full w-full rounded-lg object-cover"
+          />
+        </div>
+
+        <div className="pr-2">
+          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#F97316]">
+            Blessings
+          </p>
+
+          <p className="mt-1 text-sm font-semibold italic text-[#102B57]">
+            With the Grace of
+          </p>
+
+          <p className="font-black text-amber-600">Laddu Gopal</p>
+        </div>
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:pb-24">
+        {/* LEFT CONTENT */}
+        <div className="lg:col-span-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-4 py-2 shadow-sm">
+            <Sparkles className="h-4 w-4 text-[#F97316]" />
+
+            <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#102B57]">
+              Premium Skills Academy
+            </span>
+          </div>
+
+          {/* Mobile Laddu Gopal */}
+          <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber-200 bg-white/80 p-3 shadow-sm lg:hidden">
+            <div className="h-14 w-14 overflow-hidden rounded-xl border-2 border-amber-300 p-1">
+              <img
+                src="/faculty/laddu-gopal.jpg"
+                alt="Laddu Gopal"
+                className="h-full w-full rounded-lg object-cover"
+              />
             </div>
 
-            {/* Laddu Gopal blessing corner — desktop absolute top-right */}
-            <div
-                data-testid="laddu-gopal-corner"
-                className="hidden lg:flex absolute top-24 right-5 z-20 items-center gap-3 rounded-2xl glass px-4 py-3 border border-[color:var(--asa-gold)]/50 shadow-[0_10px_40px_-10px_rgba(212,175,55,0.55)]"
-            >
-                <span
-                    data-testid="laddu-gopal-photo-slot"
-                    className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[color:var(--asa-secondary)] border-2 border-[color:var(--asa-gold)]/70 overflow-hidden shadow-xl"
-                >
-                    <img
-                        src="/faculty/laddu-gopal.jpg"
-                        alt="Laddu Gopal"
-                        className="h-full w-full object-cover"
-                    />
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#F97316]">
+                Blessings
+              </p>
+
+              <p className="text-sm italic text-[#102B57]">
+                With the Grace of{" "}
+                <span className="font-black not-italic text-amber-600">
+                  Laddu Gopal
                 </span>
-                <div className="leading-tight">
-                    <p className="text-[9px] uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)]">
-                        Blessings
-                    </p>
-                    <p className="font-heading italic text-lg text-[color:var(--asa-gold)] leading-snug">
-                        With the Grace of{" "}
-                        <span className="whitespace-nowrap">Laddu Gopal</span>
-                    </p>
+              </p>
+            </div>
+          </div>
+
+          <h1
+            data-testid="hero-heading"
+            className="mt-8 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#102B57] sm:text-6xl lg:text-[4.7rem]"
+          >
+            School se
+            <br />
+
+            <span className="relative inline-block text-[#F97316]">
+              Career
+              <span className="absolute -bottom-2 left-0 h-[7px] w-full rounded-full bg-orange-200" />
+            </span>
+
+            <span> tak.</span>
+          </h1>
+
+          <p className="mt-7 max-w-xl text-xl font-bold leading-relaxed text-[#102B57] sm:text-2xl">
+            Skills jo classroom ke bahar bhi kaam aaye.
+          </p>
+
+          <p
+            data-testid="hero-subtitle"
+            className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg"
+          >
+            Academic Coaching, Spoken English, Personality Development,
+            Interview Preparation aur Career Guidance — practical learning aur
+            personal attention ke saath.
+          </p>
+
+          {/* Highlights */}
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
+            {highlights.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 text-sm font-bold text-[#102B57]"
+              >
+                <CheckCircle2 className="h-5 w-5 text-[#F97316]" />
+
+                {item}
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a
+              href="#contact"
+              data-testid="hero-apply-btn"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#F97316] px-7 py-4 font-bold text-white shadow-xl shadow-orange-200/80 transition duration-300 hover:-translate-y-1 hover:bg-[#EA580C]"
+            >
+              Book Free Counselling
+
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+
+            <a
+              href={`https://wa.me/${CONTACT.whatsappRaw}`}
+              target="_blank"
+              rel="noreferrer"
+              data-testid="hero-whatsapp-btn"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#102B57] bg-white px-7 py-4 font-bold text-[#102B57] transition duration-300 hover:-translate-y-1 hover:bg-[#102B57] hover:text-white"
+            >
+              <MessageCircle className="h-5 w-5" />
+
+              WhatsApp
+            </a>
+          </div>
+
+          {/* Learning Journey */}
+          <div className="mt-10">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.25em] text-slate-400">
+              Your Learning Journey
+            </p>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {journey.map((item, index) => (
+                <div key={item} className="flex items-center gap-2">
+                  <span className="rounded-full border border-[#102B57]/10 bg-white px-4 py-2 text-xs font-extrabold text-[#102B57] shadow-sm sm:text-sm">
+                    {item}
+                  </span>
+
+                  {index < journey.length - 1 && (
+                    <ArrowRight className="hidden h-4 w-4 text-[#F97316] sm:block" />
+                  )}
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="relative lg:col-span-6">
+          <div className="absolute -left-7 top-10 h-40 w-40 rounded-full bg-sky-300/30 blur-3xl" />
+
+          <div className="absolute -right-8 bottom-4 h-52 w-52 rounded-full bg-orange-300/30 blur-3xl" />
+
+          <div className="relative mx-auto max-w-[570px]">
+            {/* Decorative text */}
+            <div className="absolute -left-6 top-16 z-20 hidden -rotate-6 rounded-2xl bg-[#102B57] px-5 py-4 text-white shadow-xl sm:block">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-300">
+                Learn
+              </p>
+
+              <p className="text-lg font-black">With Clarity</p>
             </div>
 
-            <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-                {/* Left copy */}
-                <div className="lg:col-span-7">
-                    <div className="flex flex-wrap items-center gap-3">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/30 bg-[color:var(--asa-gold)]/5 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
-                            <Sparkles className="h-3.5 w-3.5" />
-                            Premium Institute
-                        </div>
-                        <div
-                            data-testid="laddu-gopal-blessing-inline"
-                            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/40 bg-[color:var(--asa-gold)]/10 pl-1 pr-3.5 py-1 text-xs italic text-[color:var(--asa-gold)]"
-                        >
-                            <img
-                                src="/faculty/laddu-gopal.jpg"
-                                alt="Laddu Gopal"
-                                className="h-6 w-6 rounded-full object-cover border border-[color:var(--asa-gold)]/60"
-                            />
-                            With the Grace of Laddu Gopal
-                        </div>
-                    </div>
+            {/* Image */}
+            <div className="relative rotate-[1.5deg] overflow-hidden rounded-[2.5rem] border-[10px] border-white bg-white shadow-[0_35px_80px_rgba(16,43,87,0.25)]">
+              <img
+                src={GALLERY[1].url}
+                alt="Classroom in session"
+                className="h-[480px] w-full object-cover sm:h-[560px]"
+              />
 
-                    <h1
-                        data-testid="hero-heading"
-                        className="font-heading mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] leading-[1.02] tracking-tight text-white"
-                    >
-                        Learn.{" "}
-                        <span className="italic text-[color:var(--asa-gold)]">
-                            Speak.
-                        </span>{" "}
-                        Grow.{" "}
-                        <span className="italic text-[color:var(--asa-gold)]">
-                            Succeed.
-                        </span>
-                    </h1>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102B57]/70 via-transparent to-transparent" />
 
-                    <p
-                        data-testid="hero-subtitle"
-                        className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[color:var(--asa-text-muted)]"
-                    >
-                        Academic Coaching (CBSE, ICSE &amp; State Board) ·
-                        Professional Spoken English · Personality Development ·
-                        Interview Preparation &amp; Career Guidance. Long-term,
-                        outcome-driven programmes — with an IT track (Intune,
-                        SCCM, PowerShell, Python, AI &amp; Cloud) coming soon.
-                    </p>
+              <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-9">
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
+                  The AmbaShree Way
+                </p>
 
-                    <div className="mt-9 flex flex-wrap items-center gap-3">
-                        <a
-                            href="#contact"
-                            data-testid="hero-apply-btn"
-                            className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--asa-gold)] px-7 py-3.5 text-sm font-semibold text-[color:var(--asa-bg)] transition-[background-color,transform] hover:bg-[color:var(--asa-gold-hover)] hover:-translate-y-0.5"
-                        >
-                            Apply Now
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                        </a>
-                        <a
-                            href="#contact"
-                            data-testid="hero-contact-btn"
-                            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--asa-gold)]/60 px-7 py-3.5 text-sm font-semibold text-[color:var(--asa-gold)] hover:bg-[color:var(--asa-gold)]/10 transition-colors"
-                        >
-                            Contact Us
-                        </a>
-                        <a
-                            href={`https://wa.me/${CONTACT.whatsappRaw}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-testid="hero-whatsapp-btn"
-                            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-[color:var(--asa-secondary)] px-6 py-3.5 text-sm font-semibold text-white hover:border-emerald-400/50 hover:text-emerald-300 transition-colors"
-                        >
-                            <MessageCircle className="h-4 w-4 text-emerald-400" />
-                            WhatsApp
-                        </a>
-                    </div>
-
-                    {/* Stats */}
-                    <dl className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
-                        {stats.map((s) => (
-                            <div
-                                key={s.label}
-                                data-testid={`hero-stat-${s.label.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                            >
-                                <dt className="font-heading text-3xl sm:text-4xl font-semibold text-white">
-                                    {s.value}
-                                </dt>
-                                <dd className="mt-1 text-xs uppercase tracking-[0.2em] text-[color:var(--asa-text-muted)]">
-                                    {s.label}
-                                </dd>
-                            </div>
-                        ))}
-                    </dl>
-                </div>
-
-                {/* Right feature card */}
-                <div className="lg:col-span-5 relative">
-                    <div className="relative overflow-hidden rounded-3xl border border-white/10 glass p-2 float-slow">
-                        <div className="relative rounded-2xl overflow-hidden">
-                            <img
-                                src={GALLERY[1].url}
-                                alt="Classroom in session"
-                                className="h-[440px] w-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--asa-bg)] via-transparent to-transparent" />
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
-                                <p className="text-xs uppercase tracking-[0.25em] text-[color:var(--asa-gold)]">
-                                    Featured
-                                </p>
-                                <p className="font-heading mt-2 text-2xl text-white">
-                                    Small-batch, mentor-led sessions
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Floating chip */}
-                    <div className="hidden md:flex absolute -bottom-6 -left-6 items-center gap-3 rounded-2xl glass px-5 py-4 shadow-2xl">
-                        <div className="h-10 w-10 rounded-full bg-[color:var(--asa-gold)]/15 flex items-center justify-center">
-                            <Sparkles className="h-5 w-5 text-[color:var(--asa-gold)]" />
-                        </div>
-                        <div>
-                            <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--asa-text-muted)]">
-                                Founder
-                            </p>
-                            <p className="text-sm font-semibold text-white">
-                                Microsoft Certified Trainer
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p className="mt-2 max-w-md text-2xl font-black leading-tight text-white sm:text-3xl">
+                  Learn. Speak.
+                  <br />
+                  Grow. Succeed.
+                </p>
+              </div>
             </div>
 
-            {/* Marquee pills */}
-            <div className="relative mt-16 border-y border-white/5 bg-[color:var(--asa-secondary)]/30 overflow-hidden">
-                <div className="flex marquee-track whitespace-nowrap py-4">
-                    {[...pills, ...pills].map((p, i) => (
-                        <span
-                            key={i}
-                            className="mx-6 text-sm uppercase tracking-[0.3em] text-[color:var(--asa-text-muted)] flex items-center gap-6"
-                        >
-                            {p}
-                            <span className="text-[color:var(--asa-gold)]">
-                                ✦
-                            </span>
-                        </span>
-                    ))}
-                </div>
+            <div className="absolute -bottom-6 -left-3 z-20 rounded-2xl bg-white px-5 py-4 shadow-2xl sm:-left-8">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#F97316]">
+                Speak
+              </p>
+
+              <p className="mt-1 font-black text-[#102B57]">
+                With Confidence
+              </p>
             </div>
-        </section>
-    );
+
+            <div className="absolute -right-3 bottom-20 z-20 rounded-2xl bg-[#F97316] px-5 py-4 text-white shadow-2xl sm:-right-8">
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-orange-100">
+                Prepare
+              </p>
+
+              <p className="mt-1 font-black">For Your Future</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Strip */}
+      <div className="relative border-y border-[#102B57]/10 bg-white/85 py-5 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-3 px-5 text-xs font-black uppercase tracking-[0.2em] text-[#102B57] sm:text-sm">
+          <span>CBSE</span>
+          <span className="text-[#F97316]">✦</span>
+          <span>ICSE</span>
+          <span className="text-[#F97316]">✦</span>
+          <span>State Board</span>
+          <span className="text-[#F97316]">✦</span>
+          <span>Spoken English</span>
+          <span className="text-[#F97316]">✦</span>
+          <span>Personality Development</span>
+          <span className="text-[#F97316]">✦</span>
+          <span>Career Guidance</span>
+        </div>
+      </div>
+    </section>
+  );
 }
