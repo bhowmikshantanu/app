@@ -283,14 +283,7 @@ export const GALLERY = [
         url: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGNvYWNoaW5nJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
         caption: "Focused Learning",
     },
-    {
-        url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w8NjAzMjd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjB0cmFpbmVyJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
-        caption: "Corporate Training",
-    },
-    {
-        url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjB0cmFpbmVyJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc4MzU5NDk4MXww&ixlib=rb-4.1.0&q=85",
-        caption: "Workshop in Progress",
-    },
+       
     {
         url: "https://images.unsplash.com/photo-1568880893176-fb2bdab44e41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxoYXBweSUyMHN0dWRlbnQlMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODM1OTQ5ODF8MA&ixlib=rb-4.1.0&q=85",
         caption: "Student Success",
