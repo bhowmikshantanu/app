@@ -1,19 +1,19 @@
 import {
-  ArrowRight,
-  BookOpen,
-  Briefcase,
-  CheckCircle2,
-  Clock,
-  Cloud,
-  Code2,
-  FlaskConical,
   GraduationCap,
   MessagesSquare,
-  Server,
-  ShieldCheck,
-  Sigma,
   Sparkles,
+  Briefcase,
+  ShieldCheck,
+  Server,
   Terminal,
+  Code2,
+  Cloud,
+  ArrowUpRight,
+  Clock,
+  CheckCircle2,
+  BookOpen,
+  Sigma,
+  FlaskConical,
 } from "lucide-react";
 
 import { COURSE_GROUPS, UPCOMING_IT_COURSES } from "@/lib/data";
@@ -34,7 +34,7 @@ const ICONS = {
   FlaskConical,
 };
 
-function AcademicCard({ group, index }) {
+function CourseCard({ group, index, featured = false }) {
   const ref = useReveal();
   const Icon = ICONS[group.icon] || GraduationCap;
 
@@ -43,151 +43,135 @@ function AcademicCard({ group, index }) {
       ref={ref}
       style={{ transitionDelay: `${index * 90}ms` }}
       data-testid={`course-group-${group.id}`}
-      className="reveal group relative overflow-hidden rounded-[2rem] border border-[#102B57]/10 bg-white p-6 shadow-[0_20px_55px_rgba(16,43,87,0.09)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(16,43,87,0.16)] sm:p-8"
+      className={`
+        reveal group relative overflow-hidden rounded-[2rem]
+        border border-slate-200/80 bg-white
+        p-7 md:p-8
+        shadow-[0_15px_50px_rgba(15,23,42,0.07)]
+        transition-all duration-500
+        hover:-translate-y-2
+        hover:shadow-[0_25px_70px_rgba(15,23,42,0.14)]
+        ${featured ? "lg:scale-[1.01]" : ""}
+      `}
     >
-      <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-orange-100/70 transition duration-500 group-hover:scale-125" />
+      <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/20" />
 
-      <div className="relative">
-        <div className="mb-6 flex items-start justify-between gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#102B57] text-white shadow-lg">
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-blue-700/10 blur-3xl transition-all duration-500 group-hover:bg-blue-700/20" />
+
+      <div className="relative z-10">
+        <div className="mb-7 flex items-start justify-between gap-4">
+          <div
+            className="
+              flex h-14 w-14 items-center justify-center rounded-2xl
+              border border-red-100 bg-red-50
+              text-red-500
+              shadow-sm
+              transition-all duration-500
+              group-hover:rotate-3 group-hover:scale-110
+            "
+          >
             <Icon className="h-7 w-7" />
           </div>
 
-          {group.subtitle && (
-            <span className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#F97316]">
-              {group.subtitle}
+          {featured && (
+            <span className="rounded-full bg-slate-950 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-white">
+              Popular
             </span>
           )}
         </div>
 
-        <h3 className="text-3xl font-black leading-tight tracking-[-0.03em] text-[#102B57]">
+        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-red-500">
+          {group.subtitle}
+        </p>
+
+        <h3 className="font-heading text-3xl font-bold leading-tight text-slate-950 md:text-[2rem]">
           {group.title}
         </h3>
-
-        <div className="mt-7 grid gap-6 sm:grid-cols-2">
-          {group.boards?.length > 0 && (
-            <div>
-              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.24em] text-slate-400">
-                Boards
-              </p>
-
-              <ul className="space-y-2">
-                {group.boards.map((board) => (
-                  <li
-                    key={board}
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-700"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#F97316]" />
-                    {board}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {group.subjects?.length > 0 && (
-            <div>
-              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.24em] text-slate-400">
-                Subjects
-              </p>
-
-              <ul className="space-y-2">
-                {group.subjects.map((subject) => (
-                  <li
-                    key={subject}
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-700"
-                  >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#F97316]" />
-                    {subject}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        {group.note && (
-          <p className="mt-6 rounded-2xl border border-[#102B57]/10 bg-[#FFF8EC] px-4 py-3 text-sm leading-6 text-slate-600">
-            {group.note}
-          </p>
-        )}
-
-        <a
-          href="#contact"
-          className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#F97316] transition hover:gap-3"
-        >
-          Enquire Now
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
-    </article>
-  );
-}
-
-function ListCard({ group, index, badgeText }) {
-  const ref = useReveal();
-  const Icon = ICONS[group.icon] || Sparkles;
-
-  return (
-    <article
-      ref={ref}
-      style={{ transitionDelay: `${index * 90}ms` }}
-      data-testid={`course-group-${group.id}`}
-      className="reveal group relative overflow-hidden rounded-[2rem] border border-[#102B57]/10 bg-white p-6 shadow-[0_20px_55px_rgba(16,43,87,0.08)] transition duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-[0_28px_70px_rgba(16,43,87,0.15)] sm:p-8"
-    >
-      <div className="absolute bottom-0 right-0 h-28 w-28 rounded-tl-full bg-orange-50 transition duration-500 group-hover:bg-orange-100" />
-
-      <div className="relative">
-        <div className="mb-6 flex items-start justify-between gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-[#F97316]">
-            <Icon className="h-7 w-7" />
-          </div>
-
-          {badgeText && (
-            <span className="rounded-full bg-[#102B57] px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-white">
-              {badgeText}
-            </span>
-          )}
-        </div>
-
-        <h3 className="text-3xl font-black leading-tight tracking-[-0.03em] text-[#102B57]">
-          {group.title}
-        </h3>
-
-        {group.subtitle && (
-          <p className="mt-2 text-xs font-black uppercase tracking-[0.18em] text-[#F97316]">
-            {group.subtitle}
-          </p>
-        )}
 
         {group.highlight && (
-          <div className="mt-5 rounded-2xl border border-orange-200 bg-orange-50 px-4 py-3">
-            <p className="text-sm font-semibold leading-6 text-[#9A4B0D]">
+          <div className="mt-5 rounded-2xl border border-red-100 bg-red-50/70 px-4 py-3">
+            <p className="text-sm leading-relaxed text-slate-700">
               {group.highlight}
             </p>
           </div>
         )}
 
-        {group.items?.length > 0 && (
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {group.items.map((item) => (
+        {group.boards && group.subjects ? (
+          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-5">
+            <div>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400">
+                Boards
+              </p>
+
+              <ul className="space-y-2.5">
+                {group.boards.map((board) => (
+                  <li
+                    key={board}
+                    className="flex items-center gap-2 text-sm font-medium text-slate-700"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    {board}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400">
+                Subjects
+              </p>
+
+              <ul className="space-y-2.5">
+                {group.subjects.map((subject) => (
+                  <li
+                    key={subject}
+                    className="flex items-center gap-2 text-sm font-medium text-slate-700"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-red-500" />
+                    {subject}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {group.items?.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2 text-sm font-semibold leading-6 text-slate-700"
+                className="
+                  flex items-start gap-2.5 rounded-xl
+                  border border-slate-100 bg-slate-50/70
+                  px-3 py-3
+                  text-sm font-medium text-slate-700
+                  transition-all duration-300
+                  hover:border-red-100 hover:bg-red-50/50
+                "
               >
-                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#F97316]" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         )}
 
+        {group.note && (
+          <p className="mt-6 border-l-2 border-red-400 pl-4 text-sm leading-relaxed text-slate-500">
+            {group.note}
+          </p>
+        )}
+
         <a
           href="#contact"
-          className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#F97316] transition hover:gap-3"
+          className="
+            mt-8 inline-flex items-center gap-2
+            text-sm font-bold text-slate-950
+            transition-all duration-300
+            hover:gap-3 hover:text-red-500
+          "
         >
           Enquire Now
-          <ArrowRight className="h-4 w-4" />
+          <ArrowUpRight className="h-4 w-4" />
         </a>
       </div>
     </article>
@@ -203,23 +187,44 @@ function UpcomingCard({ course, index }) {
       ref={ref}
       style={{ transitionDelay: `${index * 60}ms` }}
       data-testid={`upcoming-course-${index}`}
-      className="reveal flex items-center gap-4 rounded-2xl border border-[#102B57]/10 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="
+        reveal group relative overflow-hidden
+        rounded-2xl border border-slate-200
+        bg-white p-5
+        shadow-sm
+        transition-all duration-400
+        hover:-translate-y-1
+        hover:border-red-200
+        hover:shadow-xl
+      "
     >
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#102B57] text-white">
-        <Icon className="h-5 w-5" />
-      </div>
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-red-500/10 blur-2xl transition-all group-hover:bg-red-500/20" />
 
-      <div className="min-w-0 flex-1">
-        <p className="font-black text-[#102B57]">{course.title}</p>
-        <p className="mt-1 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-          IT Track
-        </p>
-      </div>
+      <div className="relative flex items-center gap-4">
+        <div
+          className="
+            flex h-12 w-12 shrink-0 items-center justify-center
+            rounded-xl bg-slate-950 text-white
+            transition-all duration-300
+            group-hover:scale-110 group-hover:bg-red-500
+          "
+        >
+          <Icon className="h-5 w-5" />
+        </div>
 
-      <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-orange-50 px-3 py-1 text-xs font-black text-[#F97316]">
-        <Clock className="h-3 w-3" />
-        Soon
-      </span>
+        <div className="min-w-0 flex-1">
+          <p className="font-bold text-slate-950">{course.title}</p>
+
+          <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400">
+            IT Track
+          </p>
+        </div>
+
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-red-100 bg-red-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-red-500">
+          <Clock className="h-3 w-3" />
+          Soon
+        </span>
+      </div>
     </div>
   );
 }
@@ -231,72 +236,92 @@ export default function Courses() {
     <section
       id="courses"
       data-testid="courses-section"
-      className="relative overflow-hidden bg-[#FFF8EC] py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-[#f8fafc] py-24 lg:py-32"
     >
-      <div className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-orange-200/30 blur-[100px]" />
-      <div className="pointer-events-none absolute -right-24 bottom-20 h-80 w-80 rounded-full bg-sky-200/30 blur-[110px]" />
+      <div className="pointer-events-none absolute left-0 top-20 h-96 w-96 rounded-full bg-blue-900/5 blur-[120px]" />
+
+      <div className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-red-500/5 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.3em] text-[#F97316]">
-              Our Programs
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red-500">
+              ✦ Our Programs
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.04em] text-[#102B57] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] text-slate-950 sm:text-5xl lg:text-6xl">
               Courses that build{" "}
-              <span className="text-[#F97316]">real confidence.</span>
+              <span className="italic text-red-500">real confidence.</span>
             </h2>
           </div>
 
-          <p className="max-w-md text-base leading-7 text-slate-600">
+          <p className="max-w-md text-base leading-relaxed text-slate-600">
             School academics, communication skills, personality development,
-            interview preparation and career readiness—designed for practical
+            interview preparation and career readiness — designed for practical
             progress.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <AcademicCard group={academic} index={0} />
-          <ListCard group={rest[0]} index={1} badgeText="Popular" />
+          <CourseCard group={academic} index={0} />
+
+          {rest[0] && (
+            <CourseCard
+              group={rest[0]}
+              index={1}
+              featured
+            />
+          )}
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <ListCard group={rest[1]} index={2} />
-          <ListCard group={rest[2]} index={3} />
+          {rest[1] && <CourseCard group={rest[1]} index={2} />}
+          {rest[2] && <CourseCard group={rest[2]} index={3} />}
         </div>
 
         <div
           id="upcoming-it"
           data-testid="upcoming-it-block"
-          className="mt-14 rounded-[2rem] bg-[#102B57] p-6 shadow-[0_30px_75px_rgba(16,43,87,0.24)] sm:p-8 lg:p-10"
+          className="
+            relative mt-16 overflow-hidden rounded-[2rem]
+            border border-slate-200
+            bg-slate-950
+            p-7 md:p-10
+            shadow-[0_25px_80px_rgba(15,23,42,0.2)]
+          "
         >
-          <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.3em] text-orange-300">
-                Coming Soon
-              </p>
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-red-500/20 blur-[100px]" />
 
-              <h3 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
-                Upcoming{" "}
-                <span className="text-orange-300">IT Courses</span>
-              </h3>
+          <div className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-blue-600/20 blur-[100px]" />
+
+          <div className="relative">
+            <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-red-400">
+                  ✦ Coming Soon
+                </p>
+
+                <h3 className="mt-3 font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
+                  Upcoming{" "}
+                  <span className="italic text-red-400">IT Courses</span>
+                </h3>
+              </div>
+
+              <p className="max-w-md text-sm leading-relaxed text-slate-400">
+                Enterprise-grade IT tracks designed by our founder — launching
+                soon at AmbaShree Skills Academy.
+              </p>
             </div>
 
-            <p className="max-w-md text-sm leading-6 text-slate-300">
-              Enterprise-grade IT learning tracks planned for AmbaShree Skills
-              Academy, with practical and career-focused training.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {UPCOMING_IT_COURSES.map((course, index) => (
-              <UpcomingCard
-                key={course.title}
-                course={course}
-                index={index}
-              />
-            ))}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {UPCOMING_IT_COURSES.map((course, index) => (
+                <UpcomingCard
+                  key={course.title}
+                  course={course}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
