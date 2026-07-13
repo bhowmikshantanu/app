@@ -31,7 +31,7 @@ export const NAV_LINKS = [
 
 export const COURSES = [
     {
-        title: "CBSE Classes 7–10",
+        title: "CBSE Classes 1–12",
         desc: "Concept-first CBSE curriculum coaching aligned with NCERT.",
         icon: "GraduationCap",
         tag: "Academics",
@@ -43,7 +43,7 @@ export const COURSES = [
         tag: "Academics",
     },
     {
-        title: "State Board Classes 7–10",
+        title: "State Board Classes 1-12",
         desc: "State board syllabus mastery with regular assessments.",
         icon: "School",
         tag: "Academics",
@@ -97,7 +97,7 @@ export const COURSE_GROUPS = [
     {
         id: "academic",
         title: "Academic Coaching",
-        subtitle: "Classes 7–10",
+        subtitle: "Classes 1–12",
         icon: "GraduationCap",
         tone: "gold",
         boards: ["CBSE", "ICSE", "State Board"],
