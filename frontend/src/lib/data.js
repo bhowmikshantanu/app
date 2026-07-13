@@ -237,6 +237,24 @@ export const FACULTY = [
         ],
     },
     {
+  name: "Shubham Chakraborty",
+  role: "Teacher",
+  photo: "/faculty/shubho.jpg",
+  qualification: "D.Pharm & B.Pharm",
+  experience: "7 Years Teaching Experience",
+  roles: [
+    "Biology Faculty - Classes 10–12",
+    "Chemistry Faculty - Classes 10–12",
+  ],
+  badges: [
+    "D.Pharm",
+    "B.Pharm",
+    "7 Years Experience",
+    "Biology",
+    "Chemistry",
+  ],
+},
+    {
              name: "Ankita Chakrawarty",
              role: "Academic Faculty",
              photo: "/faculty/ankita.jpg",
