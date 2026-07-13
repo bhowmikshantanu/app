@@ -34,7 +34,12 @@ const ICONS = {
   FlaskConical,
 };
 
-function CourseCard({ group, index, featured = false }) {
+function CourseCard({
+  group,
+  index,
+  featured = false,
+  accent = "orange",
+}) {
   const ref = useReveal();
   const Icon = ICONS[group.icon] || GraduationCap;
 
@@ -44,66 +49,94 @@ function CourseCard({ group, index, featured = false }) {
     Array.isArray(group.subjects) &&
     group.subjects.length > 0;
 
+  const accentClasses =
+    accent === "purple"
+      ? {
+          glow: "bg-purple-500/15 group-hover:bg-purple-500/25",
+          icon: "border-purple-100 bg-purple-50 text-purple-600",
+          label: "text-purple-600",
+          border: "hover:border-purple-200",
+          itemHover: "hover:border-purple-200 hover:bg-purple-50/70",
+          dot: "bg-purple-600",
+          check: "text-purple-600",
+          note: "border-purple-500",
+          link: "hover:text-purple-600",
+        }
+      : {
+          glow: "bg-orange-500/15 group-hover:bg-orange-500/25",
+          icon: "border-orange-100 bg-orange-50 text-[#F97316]",
+          label: "text-[#F97316]",
+          border: "hover:border-orange-200",
+          itemHover: "hover:border-orange-200 hover:bg-orange-50/70",
+          dot: "bg-[#F97316]",
+          check: "text-[#F97316]",
+          note: "border-[#F97316]",
+          link: "hover:text-[#F97316]",
+        };
+
   return (
     <article
       ref={ref}
       style={{ transitionDelay: `${index * 90}ms` }}
       data-testid={`course-group-${group.id}`}
       className={`
-        reveal group relative flex h-full flex-col overflow-hidden
-        rounded-[1.75rem] border bg-white p-6
-        shadow-[0_14px_45px_rgba(15,23,42,0.07)]
+        reveal group relative overflow-hidden rounded-[1.75rem]
+        border border-slate-200/80 bg-white p-6
+        shadow-[0_16px_48px_rgba(15,23,42,0.07)]
         transition-all duration-500
         hover:-translate-y-2
-        hover:shadow-[0_24px_65px_rgba(15,23,42,0.14)]
+        hover:shadow-[0_28px_75px_rgba(15,23,42,0.14)]
         md:p-7
-        ${
-          featured
-            ? "border-orange-200 ring-1 ring-orange-100"
-            : "border-slate-200/80 hover:border-orange-200"
-        }
+        ${accentClasses.border}
+        ${featured ? "ring-1 ring-orange-100" : ""}
       `}
     >
-      <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-orange-500/10 blur-3xl transition-all duration-500 group-hover:bg-orange-500/20" />
+      <div
+        className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-3xl transition-all duration-500 ${accentClasses.glow}`}
+      />
 
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-52 w-52 rounded-full bg-[#102B57]/10 blur-3xl transition-all duration-500 group-hover:bg-[#102B57]/15" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-52 w-52 rounded-full bg-[#102B57]/10 blur-3xl transition-all duration-500 group-hover:bg-purple-900/15" />
+
+      <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#102B57] via-purple-600 to-[#F97316]" />
 
       {featured && (
-        <div className="absolute right-5 top-5 z-20 rounded-full bg-[#102B57] px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white shadow-md">
+        <div className="absolute right-5 top-5 z-20 rounded-full bg-gradient-to-r from-[#24113D] to-[#102B57] px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white shadow-md">
           Popular
         </div>
       )}
 
-      <div className="relative z-10 flex h-full flex-col">
-        <div className="mb-5">
+      <div className="relative z-10">
+        <div className="mb-5 flex items-start justify-between gap-4">
           <div
             className={`
               flex h-14 w-14 items-center justify-center rounded-2xl
-              shadow-sm transition-all duration-500
+              border shadow-sm transition-all duration-500
               group-hover:rotate-3 group-hover:scale-110
-              ${
-                featured
-                  ? "bg-[#F97316] text-white"
-                  : "border border-orange-100 bg-orange-50 text-[#F97316]"
-              }
+              ${featured ? "border-orange-400 bg-[#F97316] text-white" : accentClasses.icon}
             `}
           >
             <Icon className="h-7 w-7" />
           </div>
+
+          <span className="text-5xl font-black leading-none text-slate-100 transition-colors duration-300 group-hover:text-purple-100">
+            0{index + 1}
+          </span>
         </div>
 
         {group.subtitle && (
-          <p className="mb-2 pr-20 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#F97316]">
+          <p
+            className={`mb-2 pr-20 text-[10px] font-extrabold uppercase tracking-[0.24em] ${accentClasses.label}`}
+          >
             {group.subtitle}
           </p>
         )}
 
-        <h3 className="font-heading text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 md:text-[2rem]">
+        <h3 className="max-w-xl font-heading text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 md:text-[2rem]">
           {group.title}
         </h3>
 
         {group.highlight && (
-          <div className="mt-4 rounded-2xl border border-orange-100 bg-orange-50/80 px-4 py-3">
+          <div className="mt-4 rounded-2xl border border-orange-100 bg-gradient-to-r from-orange-50 to-purple-50/60 px-4 py-3">
             <p className="text-sm font-medium leading-6 text-slate-700">
               {group.highlight}
             </p>
@@ -111,8 +144,8 @@ function CourseCard({ group, index, featured = false }) {
         )}
 
         {hasAcademicDetails ? (
-          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-5">
-            <div>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-2xl border border-slate-100 bg-slate-50/75 p-4">
               <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
                 Boards
               </p>
@@ -123,14 +156,16 @@ function CourseCard({ group, index, featured = false }) {
                     key={board}
                     className="flex items-center gap-2 text-sm font-semibold text-slate-700"
                   >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#F97316]" />
+                    <span
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full ${accentClasses.dot}`}
+                    />
                     {board}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div>
+            <div className="rounded-2xl border border-slate-100 bg-slate-50/75 p-4">
               <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
                 Subjects
               </p>
@@ -141,7 +176,9 @@ function CourseCard({ group, index, featured = false }) {
                     key={subject}
                     className="flex items-center gap-2 text-sm font-semibold text-slate-700"
                   >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#F97316]" />
+                    <CheckCircle2
+                      className={`h-4 w-4 shrink-0 ${accentClasses.check}`}
+                    />
                     {subject}
                   </li>
                 ))}
@@ -153,16 +190,18 @@ function CourseCard({ group, index, featured = false }) {
             {group.items?.map((item) => (
               <li
                 key={item}
-                className="
+                className={`
                   flex items-start gap-2.5 rounded-xl
-                  border border-slate-100 bg-slate-50/70
+                  border border-slate-100 bg-slate-50/75
                   px-3 py-2.5
                   text-sm font-medium leading-5 text-slate-700
                   transition-all duration-300
-                  hover:border-orange-200 hover:bg-orange-50/70
-                "
+                  ${accentClasses.itemHover}
+                `}
               >
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#F97316]" />
+                <CheckCircle2
+                  className={`mt-0.5 h-4 w-4 shrink-0 ${accentClasses.check}`}
+                />
                 <span>{item}</span>
               </li>
             ))}
@@ -170,23 +209,28 @@ function CourseCard({ group, index, featured = false }) {
         )}
 
         {group.note && (
-          <p className="mt-5 border-l-2 border-[#F97316] pl-4 text-sm leading-6 text-slate-500">
+          <p
+            className={`mt-5 border-l-2 pl-4 text-sm leading-6 text-slate-500 ${accentClasses.note}`}
+          >
             {group.note}
           </p>
         )}
 
-        <a
-          href="#contact"
-          className="
-            mt-auto inline-flex items-center gap-2 pt-7
-            text-sm font-extrabold text-[#102B57]
-            transition-all duration-300
-            hover:gap-3 hover:text-[#F97316]
-          "
-        >
-          Enquire Now
-          <ArrowUpRight className="h-4 w-4" />
-        </a>
+        <div className="mt-7 border-t border-slate-100 pt-5">
+          <a
+            href="#contact"
+            className={`
+              inline-flex items-center gap-2
+              text-sm font-extrabold text-[#102B57]
+              transition-all duration-300
+              hover:gap-3
+              ${accentClasses.link}
+            `}
+          >
+            Enquire Now
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
       </div>
     </article>
   );
@@ -209,15 +253,15 @@ function UpcomingCard({ course, index }) {
         sm:p-5
       "
     >
-      <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-orange-500/10 blur-2xl transition-all duration-300 group-hover:bg-orange-500/20" />
+      <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-purple-500/10 blur-2xl transition-all duration-300 group-hover:bg-orange-500/20" />
 
       <div className="relative flex items-center gap-3">
         <div
           className="
             flex h-11 w-11 shrink-0 items-center justify-center
-            rounded-xl bg-[#102B57] text-white
-            transition-all duration-300
-            group-hover:scale-110 group-hover:bg-[#F97316]
+            rounded-xl bg-gradient-to-br from-[#24113D] to-[#102B57]
+            text-white transition-all duration-300
+            group-hover:scale-110 group-hover:from-purple-600 group-hover:to-[#F97316]
           "
         >
           <Icon className="h-5 w-5" />
@@ -251,7 +295,8 @@ export default function Courses() {
       data-testid="courses-section"
       className="relative overflow-hidden bg-[#F8FAFC] py-20 lg:py-28"
     >
-      <div className="pointer-events-none absolute left-0 top-20 h-96 w-96 rounded-full bg-[#102B57]/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-0 top-20 h-96 w-96 rounded-full bg-purple-600/5 blur-[120px]" />
+
       <div className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-orange-500/5 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
@@ -276,12 +321,9 @@ export default function Courses() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
           {academic && (
-            <CourseCard
-              group={academic}
-              index={0}
-            />
+            <CourseCard group={academic} index={0} accent="orange" />
           )}
 
           {rest[0] && (
@@ -289,23 +331,18 @@ export default function Courses() {
               group={rest[0]}
               index={1}
               featured
+              accent="orange"
             />
           )}
         </div>
 
-        <div className="mt-6 grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
           {rest[1] && (
-            <CourseCard
-              group={rest[1]}
-              index={2}
-            />
+            <CourseCard group={rest[1]} index={2} accent="purple" />
           )}
 
           {rest[2] && (
-            <CourseCard
-              group={rest[2]}
-              index={3}
-            />
+            <CourseCard group={rest[2]} index={3} accent="purple" />
           )}
         </div>
 
@@ -314,13 +351,15 @@ export default function Courses() {
           data-testid="upcoming-it-block"
           className="
             relative mt-14 overflow-hidden rounded-[2rem]
-            border border-slate-800 bg-slate-950
-            p-6 shadow-[0_25px_80px_rgba(15,23,42,0.22)]
+            border border-purple-950/50
+            bg-gradient-to-br from-[#0B1028] via-[#24113D] to-[#102B57]
+            p-6 shadow-[0_25px_80px_rgba(15,23,42,0.24)]
             md:p-9
           "
         >
           <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-orange-500/20 blur-[100px]" />
-          <div className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-blue-600/20 blur-[100px]" />
+
+          <div className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-purple-600/25 blur-[100px]" />
 
           <div className="relative">
             <div className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -337,7 +376,7 @@ export default function Courses() {
                 </h3>
               </div>
 
-              <p className="max-w-md text-sm leading-6 text-slate-400">
+              <p className="max-w-md text-sm leading-6 text-slate-300">
                 Enterprise-grade IT tracks designed by our founder—launching
                 soon at AmbaShree Skills Academy.
               </p>
