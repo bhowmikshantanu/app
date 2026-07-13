@@ -100,7 +100,7 @@ function CourseCard({
       <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#102B57] via-purple-600 to-[#F97316]" />
 
       {featured && (
-        <div className="absolute right-5 top-5 z-20 rounded-full bg-gradient-to-r from-[#24113D] to-[#102B57] px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white shadow-md">
+        <div className="absolute right-5 top-5 z-20 rounded-full bg-gradient-to-r from-[#24113D] to-[#102B57] px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em] text-white shadow-md">
           Popular
         </div>
       )}
@@ -112,7 +112,11 @@ function CourseCard({
               flex h-14 w-14 items-center justify-center rounded-2xl
               border shadow-sm transition-all duration-500
               group-hover:rotate-3 group-hover:scale-110
-              ${featured ? "border-orange-400 bg-[#F97316] text-white" : accentClasses.icon}
+              ${
+                featured
+                  ? "border-orange-400 bg-[#F97316] text-white"
+                  : accentClasses.icon
+              }
             `}
           >
             <Icon className="h-7 w-7" />
@@ -125,19 +129,19 @@ function CourseCard({
 
         {group.subtitle && (
           <p
-            className={`mb-2 pr-20 text-[10px] font-extrabold uppercase tracking-[0.24em] ${accentClasses.label}`}
+            className={`mb-2 pr-20 text-[11px] font-black uppercase tracking-[0.24em] ${accentClasses.label}`}
           >
             {group.subtitle}
           </p>
         )}
 
-        <h3 className="max-w-xl font-heading text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 md:text-[2rem]">
+        <h3 className="max-w-xl font-heading text-[2rem] font-extrabold leading-[1.12] tracking-[-0.025em] text-slate-950 md:text-[2.2rem]">
           {group.title}
         </h3>
 
         {group.highlight && (
           <div className="mt-4 rounded-2xl border border-orange-100 bg-gradient-to-r from-orange-50 to-purple-50/60 px-4 py-3">
-            <p className="text-sm font-medium leading-6 text-slate-700">
+            <p className="text-[15px] font-semibold leading-6 text-slate-700">
               {group.highlight}
             </p>
           </div>
@@ -146,7 +150,7 @@ function CourseCard({
         {hasAcademicDetails ? (
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-100 bg-slate-50/75 p-4">
-              <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
+              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-slate-500">
                 Boards
               </p>
 
@@ -154,7 +158,7 @@ function CourseCard({
                 {group.boards.map((board) => (
                   <li
                     key={board}
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-700"
+                    className="flex items-center gap-2 text-[15px] font-bold leading-6 text-slate-700"
                   >
                     <span
                       className={`h-1.5 w-1.5 shrink-0 rounded-full ${accentClasses.dot}`}
@@ -166,7 +170,7 @@ function CourseCard({
             </div>
 
             <div className="rounded-2xl border border-slate-100 bg-slate-50/75 p-4">
-              <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
+              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-slate-500">
                 Subjects
               </p>
 
@@ -174,7 +178,7 @@ function CourseCard({
                 {group.subjects.map((subject) => (
                   <li
                     key={subject}
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-700"
+                    className="flex items-center gap-2 text-[15px] font-bold leading-6 text-slate-700"
                   >
                     <CheckCircle2
                       className={`h-4 w-4 shrink-0 ${accentClasses.check}`}
@@ -193,15 +197,16 @@ function CourseCard({
                 className={`
                   flex items-start gap-2.5 rounded-xl
                   border border-slate-100 bg-slate-50/75
-                  px-3 py-2.5
-                  text-sm font-medium leading-5 text-slate-700
+                  px-3.5 py-3
+                  text-[15px] font-semibold leading-6 text-slate-700
                   transition-all duration-300
                   ${accentClasses.itemHover}
                 `}
               >
                 <CheckCircle2
-                  className={`mt-0.5 h-4 w-4 shrink-0 ${accentClasses.check}`}
+                  className={`mt-1 h-4 w-4 shrink-0 ${accentClasses.check}`}
                 />
+
                 <span>{item}</span>
               </li>
             ))}
@@ -210,7 +215,7 @@ function CourseCard({
 
         {group.note && (
           <p
-            className={`mt-5 border-l-2 pl-4 text-sm leading-6 text-slate-500 ${accentClasses.note}`}
+            className={`mt-5 border-l-2 pl-4 text-[15px] font-medium leading-6 text-slate-600 ${accentClasses.note}`}
           >
             {group.note}
           </p>
@@ -221,7 +226,7 @@ function CourseCard({
             href="#contact"
             className={`
               inline-flex items-center gap-2
-              text-sm font-extrabold text-[#102B57]
+              text-[15px] font-black text-[#102B57]
               transition-all duration-300
               hover:gap-3
               ${accentClasses.link}
@@ -268,16 +273,16 @@ function UpcomingCard({ course, index }) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className="font-bold leading-tight text-slate-950">
+          <p className="text-[16px] font-extrabold leading-tight text-slate-950">
             {course.title}
           </p>
 
-          <p className="mt-1 text-[9px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
+          <p className="mt-1 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
             IT Track
           </p>
         </div>
 
-        <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-orange-100 bg-orange-50 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-[#F97316]">
+        <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-orange-100 bg-orange-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-[#F97316]">
           <Clock className="h-3 w-3" />
           Soon
         </span>
@@ -302,11 +307,11 @@ export default function Courses() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[#F97316]">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-[#F97316]">
               ✦ Our Programs
             </p>
 
-            <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-slate-950 sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 max-w-3xl font-heading text-[2.7rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-slate-950 sm:text-5xl lg:text-6xl">
               Courses that build{" "}
               <span className="italic text-[#F97316]">
                 real confidence.
@@ -314,7 +319,7 @@ export default function Courses() {
             </h2>
           </div>
 
-          <p className="max-w-md text-base leading-7 text-slate-600">
+          <p className="max-w-md text-[17px] font-medium leading-8 text-slate-600">
             School academics, communication skills, personality development,
             interview preparation and career readiness—designed for practical
             progress.
@@ -364,11 +369,11 @@ export default function Courses() {
           <div className="relative">
             <div className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-orange-300">
+                <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-300">
                   ✦ Coming Soon
                 </p>
 
-                <h3 className="mt-3 font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
+                <h3 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl">
                   Upcoming{" "}
                   <span className="italic text-orange-300">
                     IT Courses
@@ -376,7 +381,7 @@ export default function Courses() {
                 </h3>
               </div>
 
-              <p className="max-w-md text-sm leading-6 text-slate-300">
+              <p className="max-w-md text-[15px] font-semibold leading-7 text-slate-300">
                 Enterprise-grade IT tracks designed by our founder—launching
                 soon at AmbaShree Skills Academy.
               </p>
