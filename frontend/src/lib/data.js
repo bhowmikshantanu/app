@@ -37,7 +37,7 @@ export const COURSES = [
         tag: "Academics",
     },
     {
-        title: "ICSE Classes 7–10",
+        title: "ICSE Classes 1–10",
         desc: "Structured ICSE coaching with focus on analytical thinking.",
         icon: "BookOpen",
         tag: "Academics",
@@ -85,6 +85,12 @@ export const COURSES = [
         tag: "Career",
     },
     {
+        title: "Basic Computer Trainings: MS Word, MS Excel, MS Powerpoint, MS One Note, MS Access, MS Publisher",
+        desc: "Microsoft Office Suite/Microsoft 365.",
+        icon: "Microsoft",
+        tag: "Enterprise",
+    },
+    {
         title: "Microsoft Intune Training",
         desc: "Endpoint management, device compliance, MDM & MAM policies.",
         icon: "ShieldCheck",
@@ -92,7 +98,7 @@ export const COURSES = [
     },
 ];
 
-// Grouped course programs — used by the new Courses layout.
+// Grouped course programs — used by the Courses layout.
 export const COURSE_GROUPS = [
     {
         id: "academic",
@@ -101,17 +107,23 @@ export const COURSE_GROUPS = [
         icon: "GraduationCap",
         tone: "gold",
         boards: ["CBSE", "ICSE", "State Board"],
-        subjects: ["Mathematics", "Science"],
-        note: "Concept-first coaching aligned with NCERT & board patterns.",
+        subjects: [
+            "Classes 1–7 · All Subjects",
+            "Classes 8–12 · Mathematics",
+            "Classes 8–12 · English",
+            "Classes 8–12 · Science",
+        ],
+        note:
+            "Concept-first academic coaching with personal attention, strong fundamentals and regular learning support.",
     },
     {
-        id: "Spoken",
+        id: "spoken",
         title: "Professional Spoken English",
-        subtitle: "Not a 3-month course",
+        subtitle: "Practical Communication Programme",
         icon: "MessagesSquare",
         tone: "gold",
         highlight:
-            "This is NOT a 3-month spoken English course — it is a long-term, outcome-driven communication programme.",
+            "2 DAYS FREE DEMO CLASS — exclusively for the Spoken English programme.",
         items: [
             "Real English Communication",
             "Spoken English",
@@ -122,6 +134,8 @@ export const COURSE_GROUPS = [
             "Interview English",
             "Confidence Building",
         ],
+        note:
+            "A practical, outcome-driven communication programme focused on speaking English with confidence.",
     },
     {
         id: "personality",
@@ -140,7 +154,7 @@ export const COURSE_GROUPS = [
     {
         id: "career",
         title: "Career & Job Readiness",
-        subtitle: "From learner to hired professional",
+        subtitle: "From Learner to Job-Ready Professional",
         icon: "Briefcase",
         tone: "gold",
         items: [
@@ -153,14 +167,40 @@ export const COURSE_GROUPS = [
     },
 ];
 
-// Upcoming IT courses — shown as elegant "Coming Soon" chips.
+// Upcoming IT & Computer courses
 export const UPCOMING_IT_COURSES = [
-    { title: "Microsoft Intune", icon: "ShieldCheck" },
-    { title: "SCCM", icon: "Server" },
-    { title: "PowerShell", icon: "Terminal" },
-    { title: "Python", icon: "Code2" },
-    { title: "AI Basics", icon: "Sparkles" },
-    { title: "Cloud Computing", icon: "Cloud" },
+    {
+        title: "Basic Computer Course",
+        icon: "Code2",
+    },
+    {
+        title: "Advanced Computer Course",
+        icon: "Terminal",
+    },
+    {
+        title: "Microsoft Intune",
+        icon: "ShieldCheck",
+    },
+    {
+        title: "SCCM",
+        icon: "Server",
+    },
+    {
+        title: "PowerShell",
+        icon: "Terminal",
+    },
+    {
+        title: "Python",
+        icon: "Code2",
+    },
+    {
+        title: "AI Basics",
+        icon: "Sparkles",
+    },
+    {
+        title: "Cloud Computing",
+        icon: "Cloud",
+    },
 ];
 
 export const WHY_CHOOSE = [
