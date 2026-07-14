@@ -11,23 +11,23 @@ import Testimonials from "@/components/site/Testimonials";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import WhatsAppFloat from "@/components/site/WhatsAppFloat";
-
+import AnnouncementBoard from "@/components/site/AnnouncementBoard";
 export default function Home() {
-  return (
+return (
     <main data-testid="home-page" className="relative">
-      <Header />
-      <Hero />
-      <About />
-      <Courses />
-      <DigitalSolutions />
-      <WhyChooseUs />
-      <Faculty />
-      <Gallery />
-      <FeaturedStudent />
-      <Testimonials />
-      <Contact />
-      <Footer />
-      <WhatsAppFloat />
+        <AnnouncementBoard />
+        <Header />
+        <Hero />
+        <About />
+        <Courses />
+        <WhyChooseUs />
+        <Faculty />
+        <Gallery />
+        <FeaturedStudent />
+        <Testimonials />
+        <Contact />
+        <Footer />
+        <WhatsAppFloat />
     </main>
-  );
+);
 }
