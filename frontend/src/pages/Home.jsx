@@ -11,12 +11,11 @@ import Testimonials from "@/components/site/Testimonials";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import WhatsAppFloat from "@/components/site/WhatsAppFloat";
-import AnnouncementBoard from "@/components/site/AnnouncementBoard";
+
 export default function Home() {
 return (
     <main data-testid="home-page" className="relative">
         <Header />
-        <AnnouncementBoard />
         <Hero />
         <About />
         <Courses />
