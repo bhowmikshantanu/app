@@ -5,7 +5,6 @@ import Courses from "@/components/site/Courses";
 import DigitalSolutions from "@/components/site/DigitalSolutions";
 import WhyChooseUs from "@/components/site/WhyChooseUs";
 import Faculty from "@/components/site/Faculty";
-import FeeStructure from "@/components/site/FeeStructure";
 import Gallery from "@/components/site/Gallery";
 import FeaturedStudent from "@/components/site/FeaturedStudent";
 import Testimonials from "@/components/site/Testimonials";
@@ -23,7 +22,6 @@ export default function Home() {
       <DigitalSolutions />
       <WhyChooseUs />
       <Faculty />
-      <FeeStructure />
       <Gallery />
       <FeaturedStudent />
       <Testimonials />
