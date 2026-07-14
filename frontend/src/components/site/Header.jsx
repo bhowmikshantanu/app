@@ -6,38 +6,59 @@ const Logo = () => (
   <a
     href="#hero"
     data-testid="site-logo"
-    className="group flex items-center gap-3"
     aria-label="AmbaShree Skills Academy home"
+    className="group flex shrink-0 items-center gap-3"
   >
-    <span
+    <div
       className="
-        relative inline-flex h-12 w-12 items-center justify-center
-        rounded-xl border border-orange-400/30
-        bg-gradient-to-br from-[#24113D] via-[#35135B] to-[#102B57]
-        shadow-[0_8px_25px_rgba(88,28,135,0.25)]
+        relative flex h-[68px] w-[68px] shrink-0 items-center justify-center
+        rounded-full bg-white p-1
+        shadow-[0_0_22px_rgba(249,115,22,0.42)]
         transition-all duration-300
-        group-hover:-translate-y-0.5 group-hover:border-orange-400/60
+        group-hover:scale-105
+        group-hover:shadow-[0_0_30px_rgba(249,115,22,0.65)]
+        sm:h-[74px] sm:w-[74px]
       "
     >
-      <span className="font-heading text-2xl font-bold leading-none text-[#F97316]">
-        A
-      </span>
+      <img
+        src="/ambashree-logo.png"
+        alt="AmbaShree Skills Academy"
+        className="h-full w-full rounded-full object-contain"
+      />
+    </div>
 
-      <span className="font-heading absolute -bottom-0.5 -right-0.5 text-xs font-semibold leading-none text-white">
-        Sa
-      </span>
-    </span>
+    <div className="hidden flex-col leading-none sm:flex">
+      <div className="flex items-baseline">
+        <span
+          className="
+            font-heading text-[25px] font-black tracking-[-0.02em]
+            text-white
+            drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]
+          "
+        >
+          Amba
+        </span>
 
-    <span className="hidden flex-col leading-tight sm:flex">
-      <span className="font-heading text-xl font-bold tracking-tight text-white">
-        Amba
-        <span className="text-[#F97316]">Shree</span>
-      </span>
+        <span
+          className="
+            font-heading text-[25px] font-black tracking-[-0.02em]
+            text-[#F97316]
+            drop-shadow-[0_0_10px_rgba(249,115,22,0.55)]
+          "
+        >
+          Shree
+        </span>
+      </div>
 
-      <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70">
+      <span
+        className="
+          mt-1 text-[10px] font-extrabold uppercase
+          tracking-[0.28em] text-white/75
+        "
+      >
         Skills Academy
       </span>
-    </span>
+    </div>
   </a>
 );
 
@@ -74,47 +95,42 @@ export default function Header() {
         transition-all duration-300
         ${
           scrolled
-            ? "border-white/10 bg-[#0B1028]/95 shadow-[0_10px_35px_rgba(15,23,42,0.22)] backdrop-blur-xl"
-            : "border-white/5 bg-gradient-to-r from-[#0B1028]/95 via-[#24113D]/95 to-[#102B57]/95 backdrop-blur-lg"
+            ? "border-white/10 bg-[#190D2E]/95 shadow-[0_10px_35px_rgba(30,10,50,0.24)] backdrop-blur-xl"
+            : "border-white/10 bg-gradient-to-r from-[#28113F] via-[#3A174F] to-[#4A241B]"
         }
       `}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-20 -top-24 h-52 w-52 rounded-full bg-purple-600/10 blur-[80px]" />
-
-        <div className="absolute right-1/4 -top-24 h-48 w-48 rounded-full bg-orange-500/10 blur-[90px]" />
-      </div>
-
-      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+      <div
+        className="
+          mx-auto flex h-[92px] max-w-7xl
+          items-center justify-between
+          px-5 sm:px-8
+        "
+      >
         <Logo />
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((l) => (
+        <nav className="hidden items-center gap-7 lg:flex">
+          {NAV_LINKS.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
-              data-testid={`nav-${l.label
+              key={link.href}
+              href={link.href}
+              data-testid={`nav-${link.label
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
               className="
-                group/nav relative py-2
-                text-[15px] font-bold tracking-[0.01em]
+                relative py-3
+                text-[15px] font-extrabold
                 text-white/90
                 transition-colors duration-300
+                after:absolute after:bottom-1 after:left-0
+                after:h-[2px] after:w-0
+                after:bg-[#F97316]
+                after:transition-all after:duration-300
                 hover:text-white
+                hover:after:w-full
               "
             >
-              {l.label}
-
-              <span
-                className="
-                  absolute bottom-0 left-1/2 h-0.5 w-0
-                  -translate-x-1/2 rounded-full
-                  bg-gradient-to-r from-[#A855F7] to-[#F97316]
-                  transition-all duration-300
-                  group-hover/nav:w-full
-                "
-              />
+              {link.label}
             </a>
           ))}
         </nav>
@@ -124,14 +140,15 @@ export default function Header() {
             href="#contact"
             data-testid="header-apply-btn"
             className="
-              hidden items-center rounded-full
-              bg-gradient-to-r from-[#F97316] to-[#FB923C]
-              px-6 py-2.5
-              text-sm font-bold text-white
-              shadow-[0_8px_25px_rgba(249,115,22,0.28)]
+              hidden items-center justify-center
+              rounded-full
+              bg-gradient-to-r from-[#F97316] to-[#EA580C]
+              px-6 py-3
+              text-sm font-black text-white
+              shadow-[0_10px_25px_rgba(249,115,22,0.32)]
               transition-all duration-300
-              hover:-translate-y-0.5
-              hover:shadow-[0_12px_30px_rgba(249,115,22,0.38)]
+              hover:-translate-y-1
+              hover:shadow-[0_14px_30px_rgba(249,115,22,0.48)]
               md:inline-flex
             "
           >
@@ -139,16 +156,20 @@ export default function Header() {
           </a>
 
           <button
+            type="button"
             aria-label="Toggle menu"
+            aria-expanded={open}
             data-testid="mobile-menu-toggle"
-            onClick={() => setOpen((o) => !o)}
+            onClick={() => setOpen((current) => !current)}
             className="
-              inline-flex h-10 w-10 items-center justify-center
-              rounded-full border border-white/20
+              inline-flex h-11 w-11
+              items-center justify-center
+              rounded-full
+              border border-white/20
               bg-white/5 text-white
               transition-all duration-300
-              hover:border-orange-400/60
-              hover:bg-white/10
+              hover:border-[#F97316]
+              hover:bg-[#F97316]
               lg:hidden
             "
           >
@@ -165,33 +186,34 @@ export default function Header() {
         data-testid="mobile-nav"
         className={`
           overflow-hidden border-b border-white/10
-          bg-[#0B1028]/98 backdrop-blur-xl
-          transition-[max-height,opacity] duration-300
+          bg-[#241137]/98 backdrop-blur-xl
+          transition-all duration-300
           lg:hidden
           ${
             open
-              ? "max-h-[520px] opacity-100"
+              ? "max-h-[600px] opacity-100"
               : "max-h-0 opacity-0"
           }
         `}
       >
         <div className="flex flex-col gap-1 px-5 py-6">
-          {NAV_LINKS.map((l) => (
+          {NAV_LINKS.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              data-testid={`mobile-nav-${l.label
+              data-testid={`mobile-nav-${link.label
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
               className="
-                border-b border-white/5 py-3
-                text-base font-semibold text-white/90
-                transition-all duration-300
-                hover:pl-2 hover:text-[#F97316]
+                border-b border-white/10
+                py-3 text-base font-bold
+                text-white/90
+                transition-colors
+                hover:text-[#F97316]
               "
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
 
@@ -200,11 +222,11 @@ export default function Header() {
             onClick={() => setOpen(false)}
             data-testid="mobile-apply-btn"
             className="
-              mt-5 inline-flex items-center justify-center
+              mt-4 inline-flex items-center justify-center
               rounded-full
-              bg-gradient-to-r from-[#F97316] to-[#FB923C]
+              bg-gradient-to-r from-[#F97316] to-[#EA580C]
               px-5 py-3
-              text-sm font-bold text-white
+              text-sm font-black text-white
               shadow-lg
             "
           >
