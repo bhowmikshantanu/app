@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   MessageCircle,
-  Sparkles,
   CheckCircle2,
 } from "lucide-react";
 
@@ -80,14 +79,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pb-24">
         {/* Left Content */}
         <div className="lg:col-span-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-4 py-2 shadow-sm">
-            <Sparkles className="h-4 w-4 text-[#F97316]" />
-
-            <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#4A241B]">
-              Premium Skills Academy
-            </span>
-          </div>
-
+          
           {/* Mobile Laddu Gopal */}
           <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber-200 bg-white/90 p-3 shadow-sm lg:hidden">
             <div className="h-14 w-14 overflow-hidden rounded-xl border-2 border-amber-300 bg-amber-50 p-1">
@@ -114,7 +106,7 @@ export default function Hero() {
 
           <h1
             data-testid="hero-heading"
-            className="mt-8 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#382019] sm:text-6xl lg:text-[4.7rem]"
+            className="mt-3 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#382019] sm:text-6xl lg:text-[4.7rem]"
           >
             School se
             <br />
