@@ -14,6 +14,8 @@ const journey = [
   "Personality Development",
   "Interview Preparation",
   "Career Guidance",
+  "Basic Computer",
+  "Upcoming: Advance Computer",
 ];
 
 const highlights = [
