@@ -15,8 +15,8 @@ import AnnouncementBoard from "@/components/site/AnnouncementBoard";
 export default function Home() {
 return (
     <main data-testid="home-page" className="relative">
-        <AnnouncementBoard />
         <Header />
+        <AnnouncementBoard />
         <Hero />
         <About />
         <Courses />
