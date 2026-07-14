@@ -77,11 +77,12 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-14 lg:pb-24">
+
         {/* Left Content */}
         <div className="lg:col-span-6">
-          
+
           {/* Mobile Laddu Gopal */}
-          <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber-200 bg-white/90 p-3 shadow-sm lg:hidden">
+          <div className="mb-6 flex items-center gap-3 rounded-2xl border border-amber-200 bg-white/90 p-3 shadow-sm lg:hidden">
             <div className="h-14 w-14 overflow-hidden rounded-xl border-2 border-amber-300 bg-amber-50 p-1">
               <img
                 src="/faculty/laddu-gopal.jpg"
@@ -103,56 +104,63 @@ export default function Hero() {
               </p>
             </div>
           </div>
-</div>
-    </div>
 
-    {/* Announcement Board */}
-    <div className="mb-6 w-full max-w-3xl">
-      <div className="relative rounded-2xl border border-red-200 bg-white/95 px-4 py-3 shadow-[0_12px_35px_rgba(239,68,68,0.18)]">
-        <div className="absolute -top-5 left-8 h-5 w-px bg-red-400" />
-        <div className="absolute -top-5 right-8 h-5 w-px bg-red-400" />
+          {/* Announcement Board */}
+          <div className="mb-7 w-full">
+            <div className="relative rounded-xl border border-red-200 bg-white/95 px-3 py-3 shadow-[0_12px_35px_rgba(239,68,68,0.18)]">
 
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
-          <div className="text-center">
-            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
-              Registration Starts
-            </p>
-            <p className="mt-1 text-sm font-black text-slate-900">
-              23rd July
-            </p>
+              <div className="absolute -top-5 left-10 h-5 w-px bg-red-400" />
+
+              <div className="absolute -top-5 right-10 h-5 w-px bg-red-400" />
+
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+
+                <div className="text-center">
+                  <p className="text-[8px] font-black uppercase tracking-[0.12em] text-slate-500">
+                    Registration Starts
+                  </p>
+
+                  <p className="mt-1 text-sm font-black text-[#382019]">
+                    23rd July
+                  </p>
+                </div>
+
+                <div className="border-l border-slate-200 text-center">
+                  <p className="text-[8px] font-black uppercase tracking-[0.12em] text-slate-500">
+                    First Batch Starts
+                  </p>
+
+                  <p className="mt-1 text-sm font-black text-[#382019]">
+                    3rd August
+                  </p>
+                </div>
+
+                <div className="border-l border-slate-200 text-center">
+                  <p className="text-[8px] font-black uppercase tracking-[0.12em] text-slate-500">
+                    Special Discount
+                  </p>
+
+                  <p className="mt-1 text-sm font-black text-orange-600">
+                    For First Batch
+                  </p>
+                </div>
+
+                <div className="border-l border-slate-200 text-center">
+                  <p className="text-[8px] font-black uppercase tracking-[0.12em] text-slate-500">
+                    Limited Opportunity
+                  </p>
+
+                  <p className="mt-1 text-sm font-black text-red-600">
+                    HURRY UP!
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
 
-          <div className="border-l border-slate-200 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
-              First Batch Starts
-            </p>
-            <p className="mt-1 text-sm font-black text-slate-900">
-              3rd August
-            </p>
-          </div>
-
-          <div className="border-l border-slate-200 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
-              Special Discount
-            </p>
-            <p className="mt-1 text-sm font-black text-orange-600">
-              For First Batch
-            </p>
-          </div>
-
-          <div className="border-l border-slate-200 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
-              Limited Opportunity
-            </p>
-            <p className="mt-1 text-sm font-black text-red-600">
-              HURRY UP!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <h1
+          {/* Hero Heading */}
+          <h1
             data-testid="hero-heading"
             className="mt-3 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#382019] sm:text-6xl lg:text-[4.7rem]"
           >
@@ -188,6 +196,7 @@ export default function Hero() {
                 className="flex items-center gap-2 text-sm font-extrabold text-[#4A241B]"
               >
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-[#F97316]" />
+
                 {item}
               </div>
             ))}
@@ -213,6 +222,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full border-2 border-[#4A241B] bg-white px-7 py-4 font-extrabold text-[#4A241B] transition duration-300 hover:-translate-y-1 hover:bg-[#4A241B] hover:text-white"
             >
               <MessageCircle className="h-5 w-5" />
+
               WhatsApp
             </a>
           </div>
@@ -240,6 +250,7 @@ export default function Hero() {
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Right Image Side */}
@@ -249,6 +260,7 @@ export default function Hero() {
           <div className="absolute -right-8 bottom-4 h-52 w-52 rounded-full bg-orange-300/35 blur-3xl" />
 
           <div className="relative mx-auto max-w-[570px]">
+
             {/* Decorative Learn Card */}
             <div className="absolute -left-4 top-14 z-20 hidden rounded-2xl bg-gradient-to-br from-[#4A241B] via-[#4A205F] to-[#28113F] px-5 py-4 text-white shadow-xl sm:block">
               <p className="text-[10px] font-black uppercase tracking-[0.25em] text-orange-300">
@@ -260,7 +272,7 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Straight Classroom Image Card */}
+            {/* Classroom Image */}
             <div className="relative overflow-hidden rounded-[2.25rem] border-[10px] border-white bg-white shadow-[0_35px_80px_rgba(74,36,27,0.22)]">
               <img
                 src={GALLERY[1].url}
@@ -304,8 +316,10 @@ export default function Hero() {
                 For Your Future
               </p>
             </div>
+
           </div>
         </div>
+
       </div>
 
       {/* Bottom Strip */}
@@ -313,22 +327,18 @@ export default function Hero() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-3 px-5 text-xs font-black uppercase tracking-[0.2em] text-[#4A241B] sm:text-sm">
           <span>CBSE</span>
           <span className="text-purple-600">✦</span>
-
           <span>ICSE</span>
           <span className="text-[#F97316]">✦</span>
-
           <span>State Board</span>
           <span className="text-purple-600">✦</span>
-
           <span>Spoken English</span>
           <span className="text-[#F97316]">✦</span>
-
           <span>Personality Development</span>
           <span className="text-purple-600">✦</span>
-
           <span>Career Guidance</span>
         </div>
       </div>
+
     </section>
   );
 }
