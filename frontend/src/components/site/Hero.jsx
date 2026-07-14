@@ -103,8 +103,56 @@ export default function Hero() {
               </p>
             </div>
           </div>
+</div>
+    </div>
 
-          <h1
+    {/* Announcement Board */}
+    <div className="mb-6 w-full max-w-3xl">
+      <div className="relative rounded-2xl border border-red-200 bg-white/95 px-4 py-3 shadow-[0_12px_35px_rgba(239,68,68,0.18)]">
+        <div className="absolute -top-5 left-8 h-5 w-px bg-red-400" />
+        <div className="absolute -top-5 right-8 h-5 w-px bg-red-400" />
+
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+          <div className="text-center">
+            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              Registration Starts
+            </p>
+            <p className="mt-1 text-sm font-black text-slate-900">
+              23rd July
+            </p>
+          </div>
+
+          <div className="border-l border-slate-200 text-center">
+            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              First Batch Starts
+            </p>
+            <p className="mt-1 text-sm font-black text-slate-900">
+              3rd August
+            </p>
+          </div>
+
+          <div className="border-l border-slate-200 text-center">
+            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              Special Discount
+            </p>
+            <p className="mt-1 text-sm font-black text-orange-600">
+              For First Batch
+            </p>
+          </div>
+
+          <div className="border-l border-slate-200 text-center">
+            <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              Limited Opportunity
+            </p>
+            <p className="mt-1 text-sm font-black text-red-600">
+              HURRY UP!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <h1
             data-testid="hero-heading"
             className="mt-3 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#382019] sm:text-6xl lg:text-[4.7rem]"
           >
