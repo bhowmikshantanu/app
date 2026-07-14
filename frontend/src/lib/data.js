@@ -210,8 +210,7 @@ export const FACULTY = [
     {
         name: "Shantanu Bhowmik",
         role: "Founder & Lead Trainer",
-        photo: "/faculty/shantanu-nobg.png",
-        photoTransparent: true,
+        photo: "/faculty/me.png",
         qualification: "Master of Computer Applications (MCA)",
         experience: "16+ Years Corporate IT Experience",
         roles: [
@@ -234,6 +233,7 @@ export const FACULTY = [
             "Spoken English Trainer",
             "Personality Development Trainer",
             "Career Mentor",
+            "Lead Computer trainer (Basic & Advance)",
         ],
     },
     {
@@ -258,16 +258,16 @@ export const FACULTY = [
 },
     {
              name: "Ankita Chakrawarty",
-             role: "Academic Faculty",
+             role: "Academic Faculty Member",
              photo: "/faculty/ankita.jpg",
              qualification: "Bachelor of Science (B.Sc)",
-             experience: "Uttarakhand Topper | Concept-first teaching across CBSE / ICSE / State Board",
+             experience: "Topper | Concept-first teaching across CBSE / ICSE / State Board",
              roles: ["All subjects", "Academic Coaching"],
              badges: ["B.Sc", "Topper", "Excellent Educator and Subject Expert"],
     },
     {
         name: "Anshuman Singh",
-        role: "Guest Faculty",
+        role: "Guest Faculty Member",
         photo: "/faculty/anshuman.jpg",
         qualification: "Master of Business Administration (MBA)",
         designation: "HR Manager · Leading MNC",
