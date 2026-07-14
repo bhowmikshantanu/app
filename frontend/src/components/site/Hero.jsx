@@ -8,7 +8,8 @@ import {
 import { CONTACT, GALLERY } from "@/lib/data";
 
 const journey = [
-  "Classes 7–10",
+  "Classes 1–7: All Subjects",
+  "Classes 8–12: Maths, English & Science",
   "Spoken English",
   "Personality Development",
   "Interview Preparation",
